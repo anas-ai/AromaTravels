@@ -148,7 +148,7 @@ button: {
   width: 100,
   height: 50,
   marginTop:10,
-  marginLeft:40
+  marginLeft:50
 },
 buttonText: {
   color: '#fff',

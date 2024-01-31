@@ -46,7 +46,7 @@ const CarSliderImg = [
       {
         id: 5,
         image: require('../images/CarSliderImg/taxi-05.jpg'),
-        title: 'Toyota Etios',
+        title: 'TOYOTA INNOVA',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -54,7 +54,7 @@ const CarSliderImg = [
       {
         id: 6,
         image: require('../images/CarSliderImg/taxi-06.jpg'),
-        title: 'Maruti Swift Dzire',
+        title: 'Chevrolet Tavera',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -62,7 +62,7 @@ const CarSliderImg = [
       {
         id: 7,
         image: require('../images/CarSliderImg/taxi-07.jpg'),
-        title: 'Hyundai Xcent',
+        title: 'Mercedes Benz',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -70,7 +70,7 @@ const CarSliderImg = [
       {
         id: 8,
         image: require('../images/CarSliderImg/taxi-08.jpg'),
-        title: 'Toyota Innova Crysta',
+        title: 'Toyota Camry',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -82,7 +82,7 @@ const CarSliderImg = [
       {
         id: 9,
         image: require('../images/CarSliderImg/taxi-09.jpg'),
-        title: 'Toyota Etios',
+        title: 'BMW',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -90,7 +90,7 @@ const CarSliderImg = [
       {
         id: 10,
         image: require('../images/CarSliderImg/taxi-10.jpg'),
-        title: 'Maruti Swift Dzire',
+        title: 'Open Mercedes-Benz',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -98,7 +98,7 @@ const CarSliderImg = [
       {
         id: 11,
         image: require('../images/CarSliderImg/taxi-11.jpg'),
-        title: 'Hyundai Xcent',
+        title: 'Mini Bus',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -106,7 +106,7 @@ const CarSliderImg = [
       {
         id: 12,
         image: require('../images/CarSliderImg/taxi-12.jpg'),
-        title: 'Toyota Innova Crysta',
+        title: 'Tempo Traveller',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',

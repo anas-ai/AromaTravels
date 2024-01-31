@@ -61,8 +61,8 @@ const MultiSlider = () => {
       dotcolor="#213e9a"
       inactiveDotColor="#213e9a"
       dotStyle={{
-        height: 15,
-        width: 15,
+        height: 10,
+        width: 10,
         borderRadius: 50,
         marginBottom: 5,
       }}
@@ -80,7 +80,7 @@ const MultiSlider = () => {
       
       renderItem={({item, index}) => {
         return (
-          <View key={index}>
+          <View key={index} style={{flex:1}}>
             {item &&item?.imageOne?.length > 0 &&item?.imageOne?.map((elem, index) => {
                 return (
                   <View
@@ -92,6 +92,7 @@ const MultiSlider = () => {
                       borderWidth: .5,
                       borderColor: '#252525',
                       borderRadius: 10,
+                      flex:1
                     }}>
                     <Image
                       source={elem.images}

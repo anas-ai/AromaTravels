@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useRef,useEffect}from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,9 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
+  Animated,
 } from 'react-native';
+import {Animatable } from 'react-native-animatable'
 import { SliderBox } from 'react-native-image-slider-box';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
 import { RFPercentage } from 'react-native-responsive-fontsize';
@@ -18,7 +20,10 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MultiSlider from '../components/MultiSlider';
 import CarSlider from '../components/CarSlider';
-import { responsiveFontSize, responsiveWidth } from 'react-native-responsive-dimensions';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+
+
+
 
 const Home = () => {
   const images = [
@@ -58,6 +63,8 @@ const Home = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
+
+
         <SliderBox
           resizeMode="cover"
           images={images}
@@ -74,8 +81,11 @@ const Home = () => {
           duration={1000}
           slideBoxHeight={heightPercentageToDP('30%')}
           disableOnPress={true}
-        />
+          />
 
+
+        
+        
         <View style={styles.textContainer}>
           <Text style={styles.text}>Udaipur Sightseeing!</Text>
         </View>
@@ -96,9 +106,9 @@ const Home = () => {
       
           
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} autoplayInterval={true} duration={1000}>
       {HomeImages.map((item, index) => (
-        <View key={index} style={styles.itemContainer}>
+        <View key={index} style={styles.imageContainer}>
           <ImageBackground source={item.image} style={styles.image}>
             <Text style={styles.name}>
               {item.name}
@@ -190,6 +200,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('2%'),
+    borderRadius:responsiveHeight(8),
+    borderRadius:responsiveWidth(8),
+    overflow:'hidden'
   },
   imageWrapper: {
     alignItems: 'center',
@@ -204,13 +217,13 @@ const styles = StyleSheet.create({
     width: heightPercentageToDP('35%'),
     resizeMode: 'contain',
     margin:responsiveWidth(1),
-    position:'relative'
+    position:'relative',
 
   },
   imageTextContainer: {
     alignItems: 'center',
     marginVertical: heightPercentageToDP('2%'),
-  },
+ },
   imageText: {
     color: '#252525',
     fontWeight: 'bold',
@@ -230,17 +243,18 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   name:{
-    color:'#fff',
-    fontWeight:'600',
-    position:'absolute',
-    top:responsiveWidth(55),
-    left:responsiveWidth(13),
-    fontSize:responsiveFontSize(2.5),
-    textShadowColor:'#252525',
-    backgroundColor:'#00adef',
-    textAlign:'center',
-    width:'70%',
-    borderRadius:responsiveWidth(50)
+    color: '#fff',
+  fontWeight: 'bold', 
+  position: 'absolute',
+  top: responsiveWidth(55),
+  left: responsiveWidth(13),
+  fontSize: responsiveFontSize(2.5),
+  textShadowColor: '#252525',
+  textShadowOffset: { width: 3, height: 2 }, 
+  textShadowRadius: 5, 
+  textAlign: 'justify',
+  marginLeft:responsiveFontSize(-5),
+  borderRadius: responsiveWidth(10), 
   }
 });
 

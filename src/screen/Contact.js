@@ -90,7 +90,7 @@ const Contact = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <Footer/>
+      {/* <Footer/> */}
     </ScrollView>
   );
 };

@@ -9,6 +9,7 @@ import {
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/FontAwesome';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import {
   widthPercentageToDP,
@@ -74,10 +75,10 @@ const CustomDrawerContent = props => {
           onPress={() => navigation.goBack()}>
           <Icon
             name="close"
-            size={20}
+            size={18}
             style={{
               position: 'absolute',
-              bottom: 350,
+              bottom: 300,
               left: 255,
               backgroundColor: '#808080',
               color: '#fff',
@@ -137,8 +138,8 @@ const TabNavigator = () => (
       options={{
         tabBarIcon: ({color, size, focused}) => (
           <Icon
-            name={(name = focused ? 'home' : 'home-outline')}
-            size={(size = focused ? size + 6 : size + 2)}
+            name={(name = focused ? 'home-sharp' : 'home-outline')}
+            size={(size = focused ? size + 4 : size + 2)}
             color={'#fff'}
           />
         ),
@@ -153,7 +154,7 @@ const TabNavigator = () => (
         tabBarIcon: ({color, size, focused}) => (
           <Icon
             // name="information-circle-outline"
-            name={(name = focused ? 'information-circle-outline' : 'information')}
+            name={(name = focused ? 'information' : 'information-circle-outline')}
             size={(size = focused ? size + 6 : size + 2)}
             color={'#fff'}
           />
@@ -168,8 +169,7 @@ const TabNavigator = () => (
       options={{
         tabBarIcon: ({color, size, focused}) => (
           <Icon
-            // name="list-circle-outline"
-            name={(name = focused ? 'list-circle-outline' : 'list-circle')}
+            name={(name = focused ? 'list-circle' : 'list-circle-outline')}
 
             size={(size = focused ? size + 6 : size + 2)}
             color={'#fff'}
@@ -185,8 +185,8 @@ const TabNavigator = () => (
       options={{
         tabBarIcon: ({color, size, focused}) => (
           <Icon
-            name="car-outline"
-            size={(size = focused ? size + 8 : size + 2)}
+          name={(name = focused ? 'car' : 'car-outline')}
+            size={(size = focused ? size + 6 : size + 2)}
             color={'#fff'}
           />
         ),
@@ -199,9 +199,9 @@ const TabNavigator = () => (
       component={Contact}
       options={{
         tabBarIcon: ({color, size, focused}) => (
-          <Icon
-            name="person-circle-outline"
-            size={(size = focused ? size + 4 : size + 2)}
+          <Icon2
+            name={(name= focused ? 'user-circle-o':'user-circle')}
+            size={(size = focused ? size + 2 : size + 2)}
             color={'#fff'}
           />
         ),

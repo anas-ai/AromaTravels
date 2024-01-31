@@ -12,31 +12,31 @@ import {
   import Contact from '../../components/Contact';
   import Footer from '../../components/Footer';
   import { SliderBox } from 'react-native-image-slider-box';
-  import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
-  
-  
-  const images = [
-    require('../../images/TourImg/delhi-arrival.jpg'),
-    require('../../images/TourImg/jaipur-6.jpg'),
-    require('../../images/TourImg/agra.jpg'),
-  ];
+  import { responsiveHeight,responsiveFontSize,responsiveScreenWidth } from 'react-native-responsive-dimensions';  
+
   
   
   const CarBooking = [
     {
-      label: 'Delhi',
-     text:' Delhi, India’s capital territory, is a massive metropolitan area in the country’s north. In Old Delhi, a neighborhood dating to the 1600s, stands the imposing Mughal-era Red Fort, a symbol of India, and the sprawling Jama Masjid mosque, whose courtyard accommodates 25,000 people. Nearby is Chandni Chowk, a vibrant bazaar filled with food carts, sweets shops and spice stalls.'
+      label: 'Jaipur',
+      image:require('../../images/TourImg/jaipur-banner-1.jpg'),
+      text: 'Planned by Vidyadhar Bhattacharya, Jaipur holds the distinction of being the first planned city of India. Renowned globally for its coloured gems, the capital city of Rajasthan combines the allure of its ancient history with all the advantages of a metropolis. The bustling modern city is one of the three corners of the golden triangle that includes Delhi, Agra and Jaipur. The story goes that in 1876, the Prince of Wales visited India on a tour. Since the colour pink was symbolic of hospitality, Maharaja Ram Singh of Jaipur painted the entire city pink. The pink that colours the city makes for a marvellous spectacle to behold. Jaipur rises up majestically against the backdrop of the forts Nahargarh, Jaigarh and Garh Ganesh Temple. Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber. He shifted his capital from Amber to the new city because of the rapidly-growing population and an increasing water scarcity. Noted architect Vidyadhar Bhattacharya used the established principles of Vastu Shastra to build the city. '
       },
     {
-      label: 'Agra',
-  text:'This is an area of Uttar Pradesh that roughly 1,400,000 people reside in. This destination lies 110 miles southeast of the national capital of New Delhi. Its also approximately 30 miles east of Bharatpur. Taj Mahal is a world-famous attraction. Patna Bird Sanctuary and Sur Sarovar Bird Sanctuary are fun-filled and engaging attractions, offering hours worth of entertainment for the entire family. Take five from the stress of traveling at one of the alluring parks and gardens. Flip through a magazine or just watch the birds bicker in the trees at the Ram Bagh and the Mehtab Bagh. Motilal Nehru Park is also enjoyed by the locals. Skim some stones along the calm water, discover the local birdlife and have a bite to eat at Keetham Lake. Haveli Nadine Prince is a popular place where the curious go to challenge themselves. Take in the quiet atmosphere, ask the staff about guided tours and pick up a souvenir at the gift shop on your way out. Fascinating displays and objects await art aficionados at the Agra Art Gallery. The Fatehpur Sikri and the Tomb of Mariam Zamani are certainly worth looking into, even if you re not a passionate history buff. More stories from a bygone era await at the Jahangir Mahal and Shah Burj. Those interested in military history should enjoy touring Agra Fort and Panch Mahal - Agra, two examples of the region s fortifications and defenses. You can also examine the unique design of Musamman Burj and Moti Masjid. The spiritual side of the area is on display at the Jama Masjid and the Soami Bagh Temple. You may also like to go for a stroll around the Mankameshwar Temple and the Mosque and the Jawab. Immerse yourself in the colorful sights and sounds of Anguri Bagh, a bustling public square. One of the most photographed local landmarks, Chhatri of Raja Jaswant Singh is an essential stop. To learn more about the history of this community, allow some time to visit some of its quiet monuments and memorial plaques, such as Sikandra and Chini ka Rauza. If you d like to continue your journey down memory lane, you should also have a look at Tomb of Akbar the Great and Itmad-ud-Daulah s Tomb. Sadar Bazar and Kinari Bazar are the places to go to stock up on essentials or indulge in some luxury purchases.'
-    },
+      label: 'Jodhpur',
+      image:require('../../images/TourImg/jobhpur-banner-2.jpg'),
+    text: ' Jodhpur, the second largest city in Rajasthan is popularly known as the Blue City. The name is clearly befitting as most of the architecture – forts, palaces, temples, havelis and even houses are built in vivid shades of blue. The strapping forts that tower this magnificent city sum up to a spectacle you would not want to miss. The mammoth, imposing fortress of Mehrangarh has a landscape dominating a rocky ridge with the eight gates leading out of the fortress. The new city is located outside the structure. Jodhpur is also known for the rare breed of horses known as Marwari or Malani, which are only found here. Jodhpur marks its origin back to the year of 1459 AD. The history of this prosperous city revolves around the Rathore clan. Rao Jodha, the chief of Rathore Clan is credited with the origin of Jodhpur in India. The city is known to be built in place of the ancient capital, Mandore of the state of Manwar. Hence, the people of Jodhpur and surrounding areas are commonly known as Marwaris. Also, it is believed that the relics of Mandore can still be witnessed in the Mandore Gardens.'   },
     {
-      label: 'JAIPUR THE PINK CITY',
-      text: 'Planned by Vidyadhar Bhattacharya, Jaipur holds the distinction of being the first planned city of India. Renowned globally for its coloured gems, the capital city of Rajasthan combines the allure of its ancient history with all the advantages of a metropolis. The bustling modern city is one of the three corners of the golden triangle that includes Delhi, Agra and Jaipur. The story goes that in 1876, the Prince of Wales visited India on a tour. Since the colour pink was symbolic of hospitality, Maharaja Ram Singh of Jaipur painted the entire city pink. The pink that colours the city makes for a marvellous spectacle to behold. Jaipur rises up majestically against the backdrop of the forts Nahargarh, Jaigarh and Garh Ganesh Temple. Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber. He shifted his capital from Amber to the new city because of the rapidly-growing population and an increasing water scarcity. Noted architect Vidyadhar Bhattacharya used the established principles of Vastu Shastra to build the city. ',
+      label: 'Jaisalmer',
+      image:require('../../images/TourImg/jaisalmer-banner-3.jpg'),
+    text: ' If geology interests you, then Jaisalmer is where you need to journey. The Wood Fossil Park or Aakal is located about 15 kilometres away from the city. Here, one can discover and trace geologic tragedies that occurred in the Thar Desert 180 million years ago. The city of Jaisalmer also acts as the guard to western Rajasthan (and India’s) frontier. This Golden City’ is located close to the Pakistan border and in close proximity to the Thar Desert. The city’s most prominent landmark is the Jaisalmer Fort, also called Sonar Qila (Golden Fort). Unlike most other forts in India, Jaisalmer Fort is not just a tourist attraction. It houses shops, hotels and ancient havelis (homes) where generations continue to live. Jaisalmer traces its inception to the 12th century. History tells us of Rawal Jaisal, the eldest heir of the Rawal of Deoraj, was passed over for the throne of Lodurva and a younger half-brother was crowned king. Rawal Jaisal went looking for a new location to set up his capital when he came across sage Eesul. The sage told him about Krishna’s prophecy which said that a descendant of his Yaduvanshi clan would found a new kingdom at this same spot. It was in 1156 that Rawal Jaisal constructed a mud fort, named it Jaisalmer after himself and declared it his capital. ',
     },
     
-    
+    {
+      label: 'Bikaner',
+      image:require('../../images/TourImg/bikaner-banner-4.jpg'),
+   text:' Bikaner is home to one of the only two models of the biplane used by the British during World War I. They were presented by the British to Maharaja Ganga Singh, then ruler of the city. Another unique aspect about Bikaner are the sand dunes that are scattered throughout the district, especially from the north-east down to the southern area. Bikaner is situated in the northern region of Rajasthan. One of the earlier established cities, Bikaner still displays its ancient opulence through palaces and forts, built of red sandstone, that have withstood the passage of time. The city boasts of some of the world’s best riding camels and is aptly nicknamed ‘camel country’. It is also home to one of the world’s largest camel research and breeding farms; as well as being known for having its own unique temple dedicated to Karni Mata at Deshnok, called the Rats Temple. The origins of Bikaner can be traced back to 1488 when a Rathore prince, Rao Bikaji, founded the kingdom. Legend has it that Bikaji, one of Rao Jodhaji’s five sons, left his father’s Durbar in annoyance after an insensitive remark from his father, the illustrious founder of Jodhpur. Bikaji travelled far and when he came upon the wilderness called Jangladesh, he decided to set up his own kingdom and transformed it into an impressive city.  ',
+    },
   ];
   
   const RoyalRajasthan = () => {
@@ -57,28 +57,22 @@ import {
                 fontWeight: '700',
                 letterSpacing: 2,
               }}>
-              North Tours » Golden Triangle
+             Royal Rajasthan
             </Text>
             
             
           </ImageBackground>
-          {/* <SliderBox
-            resizeMode='contain'
-            images={images}
-            dotcolor="red"
-            inactiveDotColor="#fff"
-            dotStyle={{ height: 10, width: 10, borderRadius: 50 }}
-            autoplay={true}
-            autoplayInterval={5000}
-            circleLoop={true}
-            SliderBoxHeight={heightPercentageToDP('30%')}
-            imageLoadingColor="#fff"
-            style={{ width: '100%', height: heightPercentageToDP('30%') }}
-            animateTransitions={true}
-            duration={1000}
-            slideBoxHeight={heightPercentageToDP('30%')}
-            disableOnPress={true}
-          /> */}
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {
+              CarBooking.map((data, index)=>((
+                <View key={index}>
+                  <Image source={data.image} style={{height:responsiveHeight(20),width:responsiveScreenWidth(100),margin:responsiveScreenWidth(1),resizeMode:'contain'}}/>
+                </View>
+              )))
+            }
+            
+          </ScrollView>
+          
           <View
             style={{
               alignItems: 'center',
