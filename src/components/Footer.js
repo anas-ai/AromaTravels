@@ -9,7 +9,7 @@ import Icontwo from 'react-native-vector-icons/Zocial';
 const Footer = () => {
   return (
     <View style={styles.container}>
-      <View>
+      {/* <View>
         <Text style={styles.title}>Quick Link</Text>
         <Text style={styles.text}>Home</Text>
         <Text style={styles.text}>Udaipur Activities</Text>
@@ -45,7 +45,7 @@ const Footer = () => {
         <Icon style={styles.iconText} name='whatsapp' color='#00adef' size={25}><Text style={styles.text}>  +91 9664304937</Text></Icon>
         <Icon style={styles.iconText} name='phone' color='#00adef' size={25}><Text style={styles.text}>  +91 8290187159</Text></Icon>
         <Entypo style={styles.iconText} name='mail' color='#00adef' size={25}><Text style={styles.text} > info@travelaroma.in</Text></Entypo>
-      </View>
+      </View> */}
 
       <View style={{borderTopWidth:0.5,borderColor:'white',margin:10,paddingTop:8}}><Text style={styles.text2}>© 2020 Travel Aroma. All rights reserved</Text>
       <Text style={styles.text2}> Design by Sonic esolution</Text>

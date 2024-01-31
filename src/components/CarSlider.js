@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView,StyleSheet} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
+import { responsiveHeight,responsiveWidth,responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const CarSliderImg = [
   {
@@ -267,8 +268,8 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#252525',
     borderRadius: 10,
-    height: 230,
-    width: 180,
+    height: responsiveHeight(30),
+    width: responsiveWidth(44),
     overflow: 'hidden',
     position: 'relative',
     marginBottom:30

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, Linking, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 const Header = () => {
 
   
   const PhoneCall =()=>{
-    Linking.openURL(`tel:+918949217986`)
+    Linking.openURL(`tel:+919664304937`)
   }
 
   const sendEmail = () => {
@@ -25,13 +25,13 @@ const Header = () => {
       }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', paddingRight: 15 }}>
         <TouchableOpacity onPress={PhoneCall}style={{ flexDirection: 'row', alignItems: 'center', paddingRight: 15 }}>
-        <Icon name="phone" color={'#fff'} size={15}></Icon>
+        <Icon name="phone-alt" color={'#fff'} size={15}></Icon>
         <Text style={{ color: '#fff', paddingLeft: 10 }}>+91 9664304937</Text>
         </TouchableOpacity>
         
       </View>
 
-      <TouchableOpacity onPress={sendEmail} style={{ flexDirection: 'row' }}>
+      <TouchableOpacity onPress={sendEmail} style={{ flexDirection: 'row', alignItems:'center' }}>
         <Entypo name="mail" color={'#fff'} size={15}></Entypo>
         <Text style={{ color: '#fff', paddingLeft: 10 }}>travelaroma2@gmail.com</Text>
       </TouchableOpacity>

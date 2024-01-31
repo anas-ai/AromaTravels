@@ -24,15 +24,15 @@ const Contact = () => {
       <View style={styles.formContainer}>
         <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
 
-        <TextInput style={styles.input} placeholder="First Name" />
-        <TextInput style={styles.input} placeholder="Your Email" />
-        <TextInput style={styles.input} placeholder="Your Phone Number" />
-        <TextInput style={styles.input} placeholder="Select Country" />
-        <TextInput style={styles.input} placeholder="Travel Date" />
-        <TextInput style={styles.input} placeholder="Duration of Travel e.g., 2N-3D" />
-        <TextInput style={styles.input} placeholder="People Traveling Adult" />
-        <TextInput style={styles.input} placeholder="People Traveling Children" />
-        <TextInput style={styles.input} placeholder="Your Message" multiline />
+        <TextInput style={styles.input} placeholder="First Name" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Your Email" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Your Phone Number" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Select Country" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Travel Date" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Duration of Travel e.g., 2N-3D" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="People Traveling Adult" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="People Traveling Children" placeholderTextColor="#000" />
+<TextInput style={styles.input} placeholder="Your Message" multiline placeholderTextColor="#000" />
 
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Send Message</Text>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
-    color:'black'
+    color:'#000'
   },
   button: {
     backgroundColor: '#000',

@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import { SliderBox } from 'react-native-image-slider-box';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
@@ -17,6 +18,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MultiSlider from '../components/MultiSlider';
 import CarSlider from '../components/CarSlider';
+import { responsiveFontSize, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const Home = () => {
   const images = [
@@ -90,23 +92,24 @@ const Home = () => {
             specially designed for individual travelers.
           </Text>
         </View>
+        
+      
+          
 
-        <View style={styles.imageContainer}>
-          {HomeImages.map((item, index) => (
-            <TouchableOpacity
-              key={index}
-              style={styles.imageWrapper}
-              disabled={true}>
-              <Image
-                source={item.image}
-                style={styles.image}
-              />
-              <View style={styles.imageTextContainer}>
-                <Text style={styles.imageText}>{item.name}</Text>
-              </View>
-            </TouchableOpacity>
-          ))}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {HomeImages.map((item, index) => (
+        <View key={index} style={styles.itemContainer}>
+          <ImageBackground source={item.image} style={styles.image}>
+            <Text style={styles.name}>
+              {item.name}
+            </Text>
+          </ImageBackground>
+
+          
+          
         </View>
+      ))}
+    </ScrollView>
 
         <TouchableOpacity style={styles.viewMoreButton}>
           <Text style={styles.viewMoreButtonText}>View More This Sightseeing!</Text>
@@ -147,6 +150,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('3%'),
+  },
+  textContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 40,
   },
   text: {
     color: '#213e9a',
@@ -192,9 +200,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   image: {
-    height: heightPercentageToDP('35%'),
+    height: heightPercentageToDP('30%'),
     width: heightPercentageToDP('35%'),
     resizeMode: 'contain',
+    margin:responsiveWidth(1),
+    position:'relative'
+
   },
   imageTextContainer: {
     alignItems: 'center',
@@ -218,6 +229,19 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'normal',
   },
+  name:{
+    color:'#fff',
+    fontWeight:'600',
+    position:'absolute',
+    top:responsiveWidth(55),
+    left:responsiveWidth(13),
+    fontSize:responsiveFontSize(2.5),
+    textShadowColor:'#252525',
+    backgroundColor:'#00adef',
+    textAlign:'center',
+    width:'70%',
+    borderRadius:responsiveWidth(50)
+  }
 });
 
 export default Home;
