@@ -47,8 +47,8 @@ const Footer = () => {
         <Entypo style={styles.iconText} name='mail' color='#00adef' size={25}><Text style={styles.text} > info@travelaroma.in</Text></Entypo>
       </View> */}
 
-      <View style={{borderTopWidth:0.5,borderColor:'white',margin:10,paddingTop:8}}><Text style={styles.text2}>© 2020 Travel Aroma. All rights reserved</Text>
-      <Text style={styles.text2}> Design by Sonic esolution</Text>
+      {/* <View style={{borderTopWidth:0.5,borderColor:'white',margin:10,paddingTop:8}}><Text style={styles.text2}>© 2020 Travel Aroma. All rights reserved</Text> */}
+      <View>
       <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row'}}> 
       <Icontwo style={{margin:10,paddingBottom:8}} name='facebook' size={20} color="white"/>
       <Entypo  style={{margin:10}} name='tripadvisor' size={22} color="white"/>

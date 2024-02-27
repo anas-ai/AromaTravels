@@ -34,7 +34,6 @@ const EconomyInfo = [
 const Economy = () => {
   return (
     <ScrollView>
-    
     <View style={{flex:0,alignItems:'center',justifyContent:'center'}}>
       <View style={styles.textContainer}>
         <TouchableOpacity>

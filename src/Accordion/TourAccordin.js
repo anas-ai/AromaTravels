@@ -2,6 +2,7 @@ import { View, Text ,TouchableOpacity} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import {ListItem, Avatar} from '@rneui/themed';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const TourAccordin = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -12,7 +13,7 @@ const TourAccordin = () => {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title>Tour</ListItem.Title>
+            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Tour</ListItem.Title>
           </ListItem.Content>
         }
         isExpanded={expanded}

@@ -39,6 +39,8 @@ import North from './src/screen/TourScreens/North';
 import GoldenLeaf from './src/screen/TourScreens/GoldenLeaf';
 import RoyalRajasthan from './src/screen/TourScreens/RoyalRajasthan';
 import South from './src/screen/TourScreens/South';
+import EconomyCars from './src/components/EconomyCars';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const CommonHeaderTitle = () => (
   <View style={{marginLeft: widthPercentageToDP('10%')}}>
@@ -222,7 +224,7 @@ function RNEListItemAccordion() {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title>Car Rent</ListItem.Title>
+            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Car Rent</ListItem.Title>
             {/* <ListItem.Subtitle>Tap to expand</ListItem.Subtitle> */}
           </ListItem.Content>
         }
@@ -233,7 +235,7 @@ function RNEListItemAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('Economy')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Economy Cars</ListItem.Title>
+              <ListItem.Title >Economy Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -274,7 +276,7 @@ function ExcursionAccordion() {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title>Udaipur Excursion</ListItem.Title>
+            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Udaipur Excursion</ListItem.Title>
             {/* <ListItem.Subtitle>Tap to expand</ListItem.Subtitle> */}
           </ListItem.Content>
         }
@@ -340,13 +342,15 @@ const DrawerNavigator = () => (
     initialRouteName="Home"
     drawerStyle={{
       backgroundColor: '#fff',
-      width: widthPercentageToDP('80%'),
+      width: widthPercentageToDP('100%'),
     }}
+
     drawerContent={props => <CustomDrawerContent {...props} />}>
     <Drawer.Screen
       name="Home"
       component={TabNavigator}
       options={{headerTitle: () => <CommonHeaderTitle />}}
+      
     />
     <Drawer.Screen
       name="About"
@@ -381,6 +385,11 @@ const App = () => {
         <Stack.Screen
           name="DrawerNavigator"
           component={DrawerNavigator}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Economy"
+          component={Economy}
           options={{headerShown: false}}
         />
         <Stack.Screen

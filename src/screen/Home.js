@@ -1,4 +1,4 @@
-import React ,{useRef,useEffect}from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -7,23 +7,18 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
-  Animated,
 } from 'react-native';
-import {Animatable } from 'react-native-animatable'
-import { SliderBox } from 'react-native-image-slider-box';
-import FontIcon from 'react-native-vector-icons/FontAwesome';
 import { RFPercentage } from 'react-native-responsive-fontsize';
-import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import Swiper from 'react-native-swiper';
+import FontIcon from 'react-native-vector-icons/FontAwesome';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 import Welcome from '../components/Welcome';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MultiSlider from '../components/MultiSlider';
 import CarSlider from '../components/CarSlider';
-import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-
-
-
 
 const Home = () => {
   const images = [
@@ -63,29 +58,22 @@ const Home = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
-
-
-        <SliderBox
-          resizeMode="cover"
-          images={images}
-          dotcolor="red"
-          inactiveDotColor="#fff"
-          dotStyle={{ height: 10, width: 10, borderRadius: 50 }}
+        <Swiper
           autoplay={true}
-          autoplayInterval={5000}
-          circleLoop={true}
-          SliderBoxHeight={heightPercentageToDP('30%')}
-          imageLoadingColor="#fff"
-          style={{ width: '100%', height: heightPercentageToDP('30%') }}
-          animateTransitions={true}
-          duration={1000}
-          slideBoxHeight={heightPercentageToDP('30%')}
-          disableOnPress={true}
-          />
+          autoplayTimeout={5}
+          dotColor={'gray'}
+          activeDotColor={'#fff'}
+          paginationStyle={styles.pagination}
+          style={styles.swiper}
+          dotStyle={{}}
+        >
+          {images.map((image, index) => (
+            <View key={index} style={styles.slide}>
+              <Image source={image} style={styles.image} />
+            </View>
+          ))}
+        </Swiper>
 
-
-        
-        
         <View style={styles.textContainer}>
           <Text style={styles.text}>Udaipur Sightseeing!</Text>
         </View>
@@ -102,14 +90,11 @@ const Home = () => {
             specially designed for individual travelers.
           </Text>
         </View>
-        
-      
-          
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} autoplayInterval={true} duration={1000}>
       {HomeImages.map((item, index) => (
         <View key={index} style={styles.imageContainer}>
-          <ImageBackground source={item.image} style={styles.image}>
+          <ImageBackground source={item.image} style={styles.images}>
             <Text style={styles.name}>
               {item.name}
             </Text>
@@ -144,7 +129,7 @@ const Home = () => {
         <MultiSlider />
         <Welcome />
         <Contact />
-        <CarSlider/>
+        <CarSlider />
         <Footer />
       </View>
     </ScrollView>
@@ -160,11 +145,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('3%'),
-  },
-  textContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 40,
   },
   text: {
     color: '#213e9a',
@@ -182,7 +162,7 @@ const styles = StyleSheet.create({
     height: 3,
     width: 3,
     backgroundColor: '#213e9a',
-    margin:10
+    margin: 10,
   },
   descriptionContainer: {
     marginTop: heightPercentageToDP('3%'),
@@ -196,6 +176,23 @@ const styles = StyleSheet.create({
     color: '#999',
     fontWeight: 'bold',
   },
+  swiper: {
+    height: heightPercentageToDP('30%'),
+    marginVertical: heightPercentageToDP('-1%'),
+  },
+  slide: {
+    // flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+  },
+  pagination: {
+    bottom: 20,
+  },
   imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -204,30 +201,12 @@ const styles = StyleSheet.create({
     borderRadius:responsiveWidth(8),
     overflow:'hidden'
   },
-  imageWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: heightPercentageToDP('2%'),
-    borderWidth: 0.5,
-    borderColor: '#252525',
-    borderRadius: 10,
-  },
-  image: {
+  images:{
     height: heightPercentageToDP('30%'),
     width: heightPercentageToDP('35%'),
     resizeMode: 'contain',
     margin:responsiveWidth(1),
     position:'relative',
-
-  },
-  imageTextContainer: {
-    alignItems: 'center',
-    marginVertical: heightPercentageToDP('2%'),
- },
-  imageText: {
-    color: '#252525',
-    fontWeight: 'bold',
-    fontSize: RFPercentage(2),
   },
   viewMoreButton: {
     backgroundColor: '#00adef',
@@ -242,20 +221,20 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'normal',
   },
-  name:{
+  name: {
     color: '#fff',
-  fontWeight: 'bold', 
-  position: 'absolute',
-  top: responsiveWidth(55),
-  left: responsiveWidth(13),
-  fontSize: responsiveFontSize(2.5),
-  textShadowColor: '#252525',
-  textShadowOffset: { width: 3, height: 2 }, 
-  textShadowRadius: 5, 
-  textAlign: 'justify',
-  marginLeft:responsiveFontSize(-5),
-  borderRadius: responsiveWidth(10), 
-  }
+    fontWeight: 'bold',
+    position: 'absolute',
+    top: responsiveWidth(55),
+    left: responsiveWidth(13),
+    fontSize: responsiveFontSize(2.5),
+    textShadowColor: '#252525',
+    textShadowOffset: { width: 3, height: 2 },
+    textShadowRadius: 5,
+    textAlign: 'justify',
+    marginLeft: responsiveFontSize(-5),
+    borderRadius: responsiveWidth(10),
+  },
 });
 
 export default Home;

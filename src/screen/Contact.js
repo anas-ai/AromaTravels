@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text, ScrollView, ImageBackground, StyleSheet,TextInput,TouchableOpacity, Linking } from 'react-native';
+import { View, Text, ScrollView, ImageBackground, StyleSheet, TextInput, TouchableOpacity, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Footer from '../components/Footer';
+import { black } from 'react-native-paper/lib/typescript/styles/colors';
 
-const links = (url)=>{
+const links = (url) => {
   Linking.openURL(url)
 }
 
@@ -25,43 +26,79 @@ const Contact = () => {
       <View style={styles.contactInfoContainer}>
         <Text style={styles.contactInfoTitle}>Contact Info</Text>
         <AntDesign name='contacts' style={styles.phoneIcon} />
-          <Text style={{fontSize:15,fontWeight:'bold',color:'#213e9a'}}>_________________________</Text>
+        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#213e9a' }}>_________</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <View style={styles.infoRow}>
-          <Ionicons name='person' style={styles.infoIcon} />
-          <Text style={styles.infoText}>Travel Aroma</Text>
+          <Ionicons name='person' style={{
+            marginRight: 20,
+            color: '#213e9a',
+            fontSize: 25,
+            right: 80
+          }} />
+          <Text style={{
+            color: '#252525',
+            fontSize: 18,
+            right: 80
+          }}>Travel Aroma</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <EvilIcon name='location' style={styles.infoIcon} />
-          <Text style={styles.infoText}>B-143, Amar Nagar, Sajjan Garh Road, Udaipur,(Raj.) 313001, INDIA</Text>
+          <Entypo name='location-pin' style={{
+            marginRight: 20,
+            color: '#213e9a',
+            fontSize: 30,
+            left: 18
+          }} />
+          <Text style={{
+            color: '#252525',
+            fontSize: 18,
+            left: 20
+          }}>B-143, Amar Nagar, Sajjan Garh Road, Udaipur,(Raj.) 313001, INDIA</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <Ionicons name='mail' style={styles.infoIcon} />
-          <Text style={styles.infoText}>travelaroma2@gmail.com || info@travelaroma.in</Text>
+          <Ionicons name='mail' style={{
+            marginRight: 20,
+            color: '#213e9a',
+            fontSize: 25,
+            right: 22
+          }} />
+          <Text style={{
+            color: '#252525',
+            fontSize: 18,
+            right: 20
+          }}>travelaroma2@gmail.com || info@travelaroma.in</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <Ionicons name='call' style={styles.infoIcon} />
-          <Text style={styles.infoText}>+91 8290187159 ; +91 9664304937</Text>
+          <Ionicons name='call' style={{
+            marginRight: 20,
+            color: '#213e9a',
+            fontSize: 25,
+            left: 10
+          }} />
+          <Text style={{
+            color: '#252525',
+            fontSize: 18,
+            left:10 
+          }}>+91 8290187159 ; +91 9664304937</Text>
         </View>
       </View>
 
       <View style={styles.formContainer}>
         <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
 
-        <TextInput style={styles.input} placeholder="First Name" />
-        <TextInput style={styles.input} placeholder="Your Email" />
-        <TextInput style={styles.input} placeholder="Your Phone Number" />
-        <TextInput style={styles.input} placeholder="Select Country" />
-        <TextInput style={styles.input} placeholder="Travel Date" />
-        <TextInput style={styles.input} placeholder="Duration of Travel e.g., 2N-3D" />
-        <TextInput style={styles.input} placeholder="People Traveling Adult" />
-        <TextInput style={styles.input} placeholder="People Traveling Children" />
-        <TextInput style={styles.input} placeholder="Your Message" multiline />
+        <TextInput style={styles.input} placeholder="First Name" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Your Email" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Your Phone Number" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Select Country" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Travel Date" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Duration of Travel e.g., 2N-3D" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="People Traveling Adult" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="People Traveling Children" placeholderTextColor={'black'} />
+        <TextInput style={styles.input} placeholder="Your Message" multiline placeholderTextColor={'black'} />
 
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Send Message</Text>
@@ -72,21 +109,21 @@ const Contact = () => {
         <Text style={styles.contactInfoTitle}>Follow Us</Text>
 
         <View style={styles.socialIconsContainer}>
-          <TouchableOpacity onPress={()=>links('https://www.facebook.com/Travel-Aroma-100735494824270/')}>
-          <Ionicons name='logo-facebook' style={styles.socialIcon} />
+          <TouchableOpacity onPress={() => links('https://www.facebook.com/Travel-Aroma-100735494824270/')}>
+            <Ionicons name='logo-facebook' style={styles.socialIcon} />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>links('https://www.tripadvisor.in/Attraction_Review-g297672-d19947403-Reviews-Travel_Aroma-Udaipur_Udaipur_District_Rajasthan.html')}>
-          <Entypo name='tripadvisor' style={styles.socialIcon} />
+          <TouchableOpacity onPress={() => links('https://www.tripadvisor.in/Attraction_Review-g297672-d19947403-Reviews-Travel_Aroma-Udaipur_Udaipur_District_Rajasthan.html')}>
+            <Entypo name='tripadvisor' style={styles.socialIcon} />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>links('https://www.instagram.com/Travelaroma01/')}>
-          <Ionicons name='logo-instagram' style={styles.socialIcon} />
+          <TouchableOpacity onPress={() => links('https://www.instagram.com/Travelaroma01/')}>
+            <Ionicons name='logo-instagram' style={styles.socialIcon} />
           </TouchableOpacity>
-          
-          <TouchableOpacity onPress={()=>links('https://www.travelaroma.in/contact.html#')}>
 
-          <Ionicons name='logo-google' style={styles.socialIcon} />
+          <TouchableOpacity onPress={() => links('https://www.travelaroma.in/contact.html#')}>
+
+            <Ionicons name='logo-google' style={styles.socialIcon} />
           </TouchableOpacity>
         </View>
       </View>
@@ -132,7 +169,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex:1,
+    flex: 1,
     marginTop: 20,
     padding: 20,
     borderRadius: 10,
@@ -142,6 +179,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
+    position: 'relative'
   },
   infoIcon: {
     marginRight: 20,
@@ -203,7 +241,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
-    color:'black'
+    color: 'black'
   },
   button: {
     backgroundColor: '#000',
@@ -220,4 +258,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Contact;
+export default Contact;a
