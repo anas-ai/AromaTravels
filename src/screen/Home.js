@@ -19,6 +19,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MultiSlider from '../components/MultiSlider';
 import CarSlider from '../components/CarSlider';
+import { FadeIn, FadeOut } from 'react-native-reanimated';
 
 const Home = () => {
   const images = [
@@ -65,7 +66,10 @@ const Home = () => {
           activeDotColor={'#fff'}
           paginationStyle={styles.pagination}
           style={styles.swiper}
-          dotStyle={{}}
+          transitionStyle={'fade'}
+          AutoplayTimeout={2} // Decrease autoplay timeout for faster transitions
+          duration={1000} // Increase duration for smoother transitions (in milliseconds)
+          easing={'ease-out'} // Use an easing function for smoother acceleration/deceleration
         >
           {images.map((image, index) => (
             <View key={index} style={styles.slide}>
@@ -127,7 +131,7 @@ const Home = () => {
         </View>
 
         <MultiSlider />
-        <Welcome />
+        {/* <Welcome /> */}
         <Contact />
         <CarSlider />
         <Footer />
@@ -179,6 +183,7 @@ const styles = StyleSheet.create({
   swiper: {
     height: heightPercentageToDP('30%'),
     marginVertical: heightPercentageToDP('-1%'),
+    transition:'ease'
   },
   slide: {
     // flex: 1,

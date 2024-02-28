@@ -7,13 +7,14 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Footer from '../components/Footer';
 import { black } from 'react-native-paper/lib/typescript/styles/colors';
+import Contact from '../components/Contact';
 
 const links = (url) => {
   Linking.openURL(url)
 }
 
 
-const Contact = () => {
+const ContactScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <ImageBackground
@@ -86,10 +87,9 @@ const Contact = () => {
           }}>+91 8290187159 ; +91 9664304937</Text>
         </View>
       </View>
-
-      <View style={styles.formContainer}>
+        
+      {/* <View style={styles.formContainer}>
         <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
-
         <TextInput style={styles.input} placeholder="First Name" placeholderTextColor={'black'} />
         <TextInput style={styles.input} placeholder="Your Email" placeholderTextColor={'black'} />
         <TextInput style={styles.input} placeholder="Your Phone Number" placeholderTextColor={'black'} />
@@ -103,7 +103,8 @@ const Contact = () => {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Send Message</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
+      <Contact/>
 
       <View style={styles.socialContainer}>
         <Text style={styles.contactInfoTitle}>Follow Us</Text>
@@ -258,4 +259,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Contact;a
+export default ContactScreen;

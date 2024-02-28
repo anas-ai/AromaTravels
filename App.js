@@ -22,7 +22,7 @@ import Services from './src/screen/Services';
 import CarRent from './src/screen/CarRent';
 import Excursion from './src/screen/Excursion';
 import Tours from './src/screen/Tours';
-import Contact from './src/screen/Contact';
+import Contact from './src/screen/ContactScreen';
 import Header from './src/components/Header';
 import Economy from './src/screen/Economy';
 import MidSize from './src/screen/MidSize';
@@ -149,7 +149,7 @@ const TabNavigator = () => (
         tabBarLabelStyle: {fontSize: RFPercentage(1.8), color: '#fff'},
       }}
     />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="About"
       component={About}
       options={{
@@ -164,7 +164,7 @@ const TabNavigator = () => (
         tabBarLabel: 'About',
         tabBarLabelStyle: {fontSize: RFPercentage(1.8), color: '#fff'},
       }}
-    />
+    /> */}
     <Tab.Screen
       name="Services"
       component={Services}
