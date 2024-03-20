@@ -11,6 +11,7 @@ import React from 'react';
 import FontIcon from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -66,6 +67,7 @@ const CarBooking = [
 ];
 
 const Services = () => {
+  const navigation = useNavigation();
   return (
     <ScrollView>
       <View style={{flex: 0, alignItems: 'center', justifyContent: 'center'}}>
@@ -155,7 +157,7 @@ const Services = () => {
                   </Text>
                 </View>
 
-                <View>
+                {/* <View>
                   <TouchableOpacity>
                     <Text
                       style={{
@@ -168,13 +170,13 @@ const Services = () => {
                       {data.btnText}
                     </Text>
                   </TouchableOpacity>
-                </View>
+                </View> */}
               </View>
             );
           })}
 
           <View style={{marginTop:20}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Contact')}>
               <Text
                 style={{
                   padding: 10,
@@ -190,7 +192,7 @@ const Services = () => {
           </View>
         </View>
       </View>
-        <Contact/>
+        {/* <Contact/> */}
       <Footer/>
     </ScrollView>
   );

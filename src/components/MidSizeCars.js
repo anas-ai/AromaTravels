@@ -1,6 +1,7 @@
 
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Text, Image, TouchableOpacity, TouchableHighlight } from 'react-native';
 import FontIcon from 'react-native-vector-icons/Ionicons';
 
 
@@ -34,6 +35,7 @@ const MidSizeInfo =
 
 
 const MidSizeCars = () => {
+  const navigation = useNavigation();
     return (
         <ScrollView>
         
@@ -74,9 +76,9 @@ const MidSizeCars = () => {
                     <Text style={styles.text}>{item.text1}</Text>
                     <Text style={styles.text}>{item.text2}</Text>
         
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableHighlight style={styles.button} onPress={()=>navigation.navigate('Contact')}>
                       <Text style={styles.buttonText}>{item.btnTxt}</Text>
-                    </TouchableOpacity>
+                    </TouchableHighlight>
                   </View>
                 </View>
               ))}

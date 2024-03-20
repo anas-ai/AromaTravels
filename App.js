@@ -1,5 +1,12 @@
 import React from 'react';
-import {Image, View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+} from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {
   createDrawerNavigator,
@@ -40,7 +47,7 @@ import GoldenLeaf from './src/screen/TourScreens/GoldenLeaf';
 import RoyalRajasthan from './src/screen/TourScreens/RoyalRajasthan';
 import South from './src/screen/TourScreens/South';
 import EconomyCars from './src/components/EconomyCars';
-import { responsiveFontSize } from 'react-native-responsive-dimensions';
+import {responsiveFontSize, responsiveScreenWidth} from 'react-native-responsive-dimensions';
 
 const CommonHeaderTitle = () => (
   <View style={{marginLeft: widthPercentageToDP('10%')}}>
@@ -62,16 +69,17 @@ const CustomDrawerContent = props => {
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.header}>
-        <Image
-          source={require('../aromatravels/src/images/website-logo.jpg')}
-          style={styles.headerImage}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            source={require('../aromatravels/src/images/website-logo.jpg')}
+            style={styles.headerImage}
+          />
+        </TouchableOpacity>
       </View>
 
-
       <DrawerItemList {...props} />
-      
-      <View style={{marginTop:3}}>
+
+      {/* <View style={{marginTop:3}}>
         <TouchableOpacity
           style={{position: 'relative'}}
           onPress={() => navigation.goBack()}>
@@ -88,10 +96,10 @@ const CustomDrawerContent = props => {
             }}
           />
         </TouchableOpacity>
-      </View>
-<RNEListItemAccordion navigation={navigation} />
-<ExcursionAccordion navigation={navigation} />
-<TourAccordin navigation ={navigation}/>
+      </View> */}
+      <RNEListItemAccordion navigation={navigation} />
+      <ExcursionAccordion navigation={navigation} />
+      <TourAccordin navigation={navigation} />
     </DrawerContentScrollView>
   );
 };
@@ -109,9 +117,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   headerText: {
-    fontSize: RFPercentage(2.5),
-    fontWeight: 'bold',
-    color: '#252525',
+    fontSize: RFPercentage(1.7),
+    color: 'gray',
+    fontWeight:'700',
+    marginLeft:responsiveScreenWidth(.5),
+    
   },
 });
 
@@ -141,12 +151,12 @@ const TabNavigator = () => (
         tabBarIcon: ({color, size, focused}) => (
           <Icon
             name={(name = focused ? 'home-sharp' : 'home-outline')}
-            size={(size = focused ? size + 4 : size + 2)}
+            size={(size = focused ? size + 4 : size + 0)}
             color={'#fff'}
           />
         ),
         tabBarLabel: 'Home',
-        tabBarLabelStyle: {fontSize: RFPercentage(1.8), color: '#fff'},
+        tabBarLabelStyle: {fontSize: RFPercentage(1.5), color: '#fff'},
       }}
     />
     {/* <Tab.Screen
@@ -172,13 +182,12 @@ const TabNavigator = () => (
         tabBarIcon: ({color, size, focused}) => (
           <Icon
             name={(name = focused ? 'list-circle' : 'list-circle-outline')}
-
-            size={(size = focused ? size + 6 : size + 2)}
+            size={(size = focused ? size + 4 : size + 0)}
             color={'#fff'}
           />
         ),
         tabBarLabel: 'Services',
-        tabBarLabelStyle: {fontSize: RFPercentage(1.8), color: '#fff'},
+        tabBarLabelStyle: {fontSize: RFPercentage(1.5), color: '#fff'},
       }}
     />
     <Tab.Screen
@@ -187,8 +196,8 @@ const TabNavigator = () => (
       options={{
         tabBarIcon: ({color, size, focused}) => (
           <Icon
-          name={(name = focused ? 'car' : 'car-outline')}
-            size={(size = focused ? size + 6 : size + 2)}
+            name={(name = focused ? 'car' : 'car-outline')}
+            size={(size = focused ? size + 4 : size + 0)}
             color={'#fff'}
           />
         ),
@@ -202,13 +211,13 @@ const TabNavigator = () => (
       options={{
         tabBarIcon: ({color, size, focused}) => (
           <Icon2
-            name={(name= focused ? 'user-circle-o':'user-circle')}
-            size={(size = focused ? size + 2 : size + 2)}
+            name={(name = focused ? 'user-circle-o' : 'user-circle')}
+            size={(size = focused ? size + 4 : size + 0)}
             color={'#fff'}
           />
         ),
         tabBarLabel: 'Contact',
-        tabBarLabelStyle: {fontSize: RFPercentage(1.8), color: '#fff'},
+        tabBarLabelStyle: {fontSize: RFPercentage(1.5), color: '#fff'},
       }}
     />
   </Tab.Navigator>
@@ -224,7 +233,15 @@ function RNEListItemAccordion() {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Car Rent</ListItem.Title>
+            <ListItem.Title
+              style={{
+                fontSize: RFPercentage(1.7),
+                color: 'gray',
+                fontWeight:'700',
+                marginLeft:responsiveScreenWidth(.5)
+              }}>
+              Car Rent
+            </ListItem.Title>
             {/* <ListItem.Subtitle>Tap to expand</ListItem.Subtitle> */}
           </ListItem.Content>
         }
@@ -235,7 +252,7 @@ function RNEListItemAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('Economy')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title >Economy Cars</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Economy Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -243,21 +260,21 @@ function RNEListItemAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('MidSize')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Mid-Size Cars</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Mid-Size Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Luxury')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Luxury Cars</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Luxury Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('DeluxeCar')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Deluxe Coach </ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Deluxe Coach </ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -276,7 +293,15 @@ function ExcursionAccordion() {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Udaipur Excursion</ListItem.Title>
+            <ListItem.Title
+              style={{
+                fontSize: RFPercentage(1.7),
+                color: 'gray',
+                fontWeight:'700',
+                marginLeft:responsiveScreenWidth(.5)
+              }}>
+              Udaipur Excursion
+            </ListItem.Title>
             {/* <ListItem.Subtitle>Tap to expand</ListItem.Subtitle> */}
           </ListItem.Content>
         }
@@ -287,7 +312,7 @@ function ExcursionAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('UdaipurDay')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Udaipur Day Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Udaipur Day Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -295,14 +320,14 @@ function ExcursionAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('Kumbhalgarh')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Kumbhalgarh-Haldighati Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Kumbhalgarh-Haldighati Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Ranakpur')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Ranakpur Kumbhalgarh day tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Ranakpur Kumbhalgarh day tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -310,7 +335,7 @@ function ExcursionAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('Ekling')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>
                 Eklingji Nathdwara Haldighati Tour{' '}
               </ListItem.Title>
             </ListItem.Content>
@@ -320,7 +345,7 @@ function ExcursionAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('Chittorgarh')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Chittorgarh Fort day tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Chittorgarh Fort day tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -328,7 +353,7 @@ function ExcursionAccordion() {
         <TouchableOpacity onPress={() => navigation.navigate('MountAbu')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Mount Abu Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Mount Abu Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -344,13 +369,11 @@ const DrawerNavigator = () => (
       backgroundColor: '#fff',
       width: widthPercentageToDP('100%'),
     }}
-
     drawerContent={props => <CustomDrawerContent {...props} />}>
     <Drawer.Screen
       name="Home"
       component={TabNavigator}
       options={{headerTitle: () => <CommonHeaderTitle />}}
-      
     />
     <Drawer.Screen
       name="About"
@@ -368,7 +391,6 @@ const DrawerNavigator = () => (
       options={{headerTitle: () => <CommonHeaderTitle />}}
     /> */}
 
-    
     <Drawer.Screen
       name="Contact"
       component={Contact}
@@ -407,7 +429,7 @@ const App = () => {
           component={DeluxeCar}
           options={{headerShown: false}}
         />
-          {/* Excursion screens */}
+        {/* Excursion screens */}
         <Stack.Screen
           name="UdaipurDay"
           component={UdaipurDay}
@@ -439,25 +461,25 @@ const App = () => {
           options={{headerShown: false}}
         />
         {/* Tour screen */}
-        <Stack.Screen 
-        name='North'
-        component={North}
-        options={{headerShown:false}}
+        <Stack.Screen
+          name="North"
+          component={North}
+          options={{headerShown: false}}
         />
-        <Stack.Screen 
-        name='South'
-        component={South}
-        options={{headerShown:false}}
+        <Stack.Screen
+          name="South"
+          component={South}
+          options={{headerShown: false}}
         />
-        <Stack.Screen 
-        name='GoldenLeaf'
-        component={GoldenLeaf}
-        options={{headerShown:false}}
+        <Stack.Screen
+          name="GoldenLeaf"
+          component={GoldenLeaf}
+          options={{headerShown: false}}
         />
-        <Stack.Screen 
-        name='RoyalRajasthan'
-        component={RoyalRajasthan}
-        options={{headerShown:false}}
+        <Stack.Screen
+          name="RoyalRajasthan"
+          component={RoyalRajasthan}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -465,3 +487,4 @@ const App = () => {
 };
 
 export default App;
+

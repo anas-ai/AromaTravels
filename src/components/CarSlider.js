@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, Image, ScrollView,StyleSheet} from 'react-
 import {SliderBox} from 'react-native-image-slider-box';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
 import { responsiveHeight,responsiveWidth,responsiveFontSize } from 'react-native-responsive-dimensions';
+import { useNavigation } from '@react-navigation/native';
 
 const CarSliderImg = [
   {
@@ -46,7 +47,7 @@ const CarSliderImg = [
       {
         id: 5,
         image: require('../images/CarSliderImg/taxi-05.jpg'),
-        title: 'TOYOTA INNOVA',
+        title: 'Tempo Traveller',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -54,7 +55,7 @@ const CarSliderImg = [
       {
         id: 6,
         image: require('../images/CarSliderImg/taxi-06.jpg'),
-        title: 'Chevrolet Tavera',
+        title: 'Mini Bus',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -82,7 +83,7 @@ const CarSliderImg = [
       {
         id: 9,
         image: require('../images/CarSliderImg/taxi-09.jpg'),
-        title: 'BMW',
+        title: 'Mercedes-Benz',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -90,7 +91,7 @@ const CarSliderImg = [
       {
         id: 10,
         image: require('../images/CarSliderImg/taxi-10.jpg'),
-        title: 'Open Mercedes-Benz',
+        title: 'BMW',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -98,7 +99,7 @@ const CarSliderImg = [
       {
         id: 11,
         image: require('../images/CarSliderImg/taxi-11.jpg'),
-        title: 'Mini Bus',
+        title: 'Toyota Camry',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -106,7 +107,7 @@ const CarSliderImg = [
       {
         id: 12,
         image: require('../images/CarSliderImg/taxi-12.jpg'),
-        title: 'Tempo Traveller',
+        title: 'Open Mercedes-Benz',
         text1: 'Air Conditoned',
         text2: 'Passengers: 4 (including Driver)',
         btnTxt: 'Book Now',
@@ -116,6 +117,7 @@ const CarSliderImg = [
 ];
 
 const CarSlider = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -209,7 +211,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{elem.title}</Text>
                   <Text style={styles.text}>{elem.text1}</Text>
                   <Text style={styles.text2}>{elem.text2}</Text>
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{elem.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>
@@ -223,7 +225,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{subElem.title}</Text>
                   <Text style={styles.text}>{subElem.text1}</Text>
                   <Text style={styles.text2}>{subElem.text2}</Text>
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{subElem.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>
@@ -237,7 +239,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{subElem2.title}</Text>
                   <Text style={styles.text}>{subElem2.text1}</Text>
                   <Text style={styles.text2}>{subElem2.text2}</Text>
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{subElem2.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>

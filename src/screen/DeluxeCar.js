@@ -1,117 +1,107 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { ScrollView, View, Text, Image, TouchableOpacity, TouchableHighlight } from 'react-native';
 import FontIcon from 'react-native-vector-icons/Ionicons';
-import React from 'react'
+import { useNavigation } from '@react-navigation/native';
+import Footer from '../components/Footer';
 
 const DeluxeInfo = [
-    {
-      id: 1,
-      image: require('../images/taxi-13.jpg'),
-      title: ' Luxury Bus',
-      text1: 'Air Conditioned',
-      text2: 'Passengers: 42(including Driver)',
-      btnTxt: 'Book Now',
-    },
-    {
-      id: 2,
-      image: require('../images/CarSliderImg/taxi-06.jpg'),
-      title: 'Mini Bus',
-      text1: 'Air Conditioned',
-      text2: 'Passengers: 32(including Driver)',
-      btnTxt: 'Book Now',
-    },
-    {
-      id: 3,
-      image: require('../images/taxi-05.jpg'),
-      title: 'Tempo Traveller',
-      text1: 'Air Conditioned',
-      text2: 'Passengers: 14(including Driver)',
-      btnTxt: 'Book Now',
-    },
-    
-    
-  ];
-
-
+  {
+    id: 1,
+    image: require('../images/taxi-13.jpg'),
+    title: ' Luxury Bus',
+    text1: 'Air Conditioned',
+    text2: 'Passengers: 42(including Driver)',
+    btnTxt: 'Book Now',
+  },
+  {
+    id: 2,
+    image: require('../images/CarSliderImg/taxi-06.jpg'),
+    title: 'Mini Bus',
+    text1: 'Air Conditioned',
+    text2: 'Passengers: 32(including Driver)',
+    btnTxt: 'Book Now',
+  },
+  {
+    id: 3,
+    image: require('../images/taxi-05.jpg'),
+    title: 'Tempo Traveller',
+    text1: 'Air Conditioned',
+    text2: 'Passengers: 14(including Driver)',
+    btnTxt: 'Book Now',
+  },
+];
 
 const DeluxeCar = () => {
-    return (
-        <ScrollView>
-        
-        <View style={{flex:0,alignItems:'center',justifyContent:'center'}}>
-          <View style={styles.textContainer}>
-              <Text style={{color: '#213e9a',
-                fontSize: 30,
-                fontWeight: '500',
-                marginTop:20
-                }}>Deluxe Coaches</Text>
-            </View>
-            <View
-              style={{
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginVertical: -15,
-                  flexDirection: 'row',
-                  marginBottom:15
-                }}>
-              <View style={{paddingHorizontal: 12}}>
-                <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
-              </View>
-              <FontIcon name="car-sport" color={'#213e9a'} size={30} style={{marginTop:30}}/>
-              <View>
-                <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
-                  _
-                </Text>
-              </View>
-            </View>
-            
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {DeluxeInfo.map((item, index) => (
-                <View key={index} style={styles.itemContainer}>
-                  <Image source={item.image} style={styles.image} />
-        
-                  <View style={styles.textContainer}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.text}>{item.text1}</Text>
-                    <Text style={styles.text}>{item.text2}</Text>
-        
-                    <TouchableOpacity style={styles.button}>
-                      <Text style={styles.buttonText}>{item.btnTxt}</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              ))}
-            </ScrollView>
+  const navigation = useNavigation();
+
+  return (
+    <ScrollView>
+      <TouchableOpacity style={styles.goBack} onPress={() => navigation.goBack()}>
+        <FontIcon name="arrow-back" color={'#213e9a'} size={30} />
+      </TouchableOpacity>
+      <View style={{flex:0,alignItems:'center',justifyContent:'center'}}>
+        <View style={styles.textContainer}>
+          <Text style={{color: '#213e9a', fontSize: 30, fontWeight: '500', marginTop:20}}>Deluxe Coaches</Text>
         </View>
-            </ScrollView>
-          );
+        <View style={styles.iconContainer}>
+          <View style={{paddingHorizontal: 12}}>
+            <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
+          </View>
+          <FontIcon name="car-sport" color={'#213e9a'} size={30} style={{marginTop:30}}/>
+          <View>
+            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>_</Text>
+          </View>
+        </View>
+        
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {DeluxeInfo.map((item, index) => (
+            <View key={index} style={styles.itemContainer}>
+              <Image source={item.image} style={styles.image} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.text}>{item.text1}</Text>
+                <Text style={styles.text}>{item.text2}</Text>
+
+                <TouchableHighlight style={styles.button} onPress={()=>navigation.navigate('Contact')}>
+                  <Text style={styles.buttonText}>{item.btnTxt}</Text>
+                </TouchableHighlight>
+              </View>
+            </View>
+          ))}
+        </ScrollView>
+      </View>
+        <Footer/>
+    </ScrollView>
+  );
 }
 
 const styles = {
-    container: {
-        flex: 0,
-      },
-      textContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginVertical: 40,
-      },
-      text: {
-        color: '#213e9a',
-        fontSize: 30,
-        fontWeight: '500',
-      },
-      descriptionContainer: {
-        marginTop: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingHorizontal: 20,
-      },
-      description: {
-        lineHeight:22 ,
-        textAlign: 'justify',
-        color: '#999',
-        fontWeight: 'bold',
-      },
+  container: {
+    flex: 0,
+  },
+  textContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 40,
+  },
+  text: {
+    color: '#213e9a',
+    fontSize: 30,
+    fontWeight: '500',
+  },
+  descriptionContainer: {
+    marginTop: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  description: {
+    lineHeight:22 ,
+    textAlign: 'justify',
+    color: '#999',
+    fontWeight: 'bold',
+  },
   itemContainer: {
     borderWidth: 0.2,
     borderColor: '#000',
@@ -159,6 +149,19 @@ const styles = {
     alignItems: 'center',
     fontWeight:'bold'
   },
+  goBack: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 1,
+  },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: -15,
+    flexDirection: 'row',
+    marginBottom:15
+  },
 };
 
-export default DeluxeCar
+export default DeluxeCar;

@@ -1,6 +1,7 @@
 import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
 import FontIcon from 'react-native-vector-icons/Ionicons';
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const DeluxeInfo = [
     {
@@ -34,6 +35,7 @@ const DeluxeInfo = [
 
 
 const Deluxe = () => {
+  const navigation = useNavigation()
     return (
         <ScrollView>
         
@@ -74,7 +76,7 @@ const Deluxe = () => {
                     <Text style={styles.text}>{item.text1}</Text>
                     <Text style={styles.text}>{item.text2}</Text>
         
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Contact')}>
                       <Text style={styles.buttonText}>{item.btnTxt}</Text>
                     </TouchableOpacity>
                   </View>

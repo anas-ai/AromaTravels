@@ -2,7 +2,8 @@ import { View, Text ,TouchableOpacity} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import {ListItem, Avatar} from '@rneui/themed';
-import { responsiveFontSize } from 'react-native-responsive-dimensions';
+import { responsiveFontSize, responsiveScreenWidth } from 'react-native-responsive-dimensions';
+import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const TourAccordin = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -13,7 +14,12 @@ const TourAccordin = () => {
       <ListItem.Accordion
         content={
           <ListItem.Content>
-            <ListItem.Title style={{fontSize:responsiveFontSize(1.6),marginLeft:2,fontWeight:'600'}}>Tour</ListItem.Title>
+            <ListItem.Title  style={{
+                fontSize: RFPercentage(1.7),
+                color: 'gray',
+                fontWeight:'700',
+                marginLeft:responsiveScreenWidth(.5)
+              }}>Tour</ListItem.Title>
           </ListItem.Content>
         }
         isExpanded={expanded}
@@ -24,7 +30,7 @@ const TourAccordin = () => {
         <TouchableOpacity onPress={() => navigation.navigate('North')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>North Tours</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>North Tours</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -32,7 +38,7 @@ const TourAccordin = () => {
         <TouchableOpacity onPress={() => navigation.navigate('South')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>South Tours</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>South Tours</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -40,7 +46,7 @@ const TourAccordin = () => {
         <TouchableOpacity onPress={() => navigation.navigate('GoldenLeaf')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Golden Leaf</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Golden Leaf</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -48,7 +54,7 @@ const TourAccordin = () => {
         <TouchableOpacity onPress={() => navigation.navigate('RoyalRajasthan')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title>Royal Rajasthan</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Royal Rajasthan</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>

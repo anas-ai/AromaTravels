@@ -6,11 +6,13 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
+  TouchableHighlight,
 } from 'react-native';
 import React from 'react';
 import FontIcon from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import { useNavigation } from '@react-navigation/native';
 
 const CarBooking = [
   {
@@ -53,6 +55,7 @@ const CarBooking = [
 ];
 
 const UdaipurDay = () => {
+  const navigation = useNavigation()
   return (
     <ScrollView>
       <View style={{flex: 0, alignItems: 'center', justifyContent: 'center'}}>
@@ -142,8 +145,8 @@ const UdaipurDay = () => {
                   </Text>
                 </View>
 
-                <View>
-                  <TouchableOpacity>
+                {/* <View>
+                  <TouchableHighlight onPress={()=>navigation.navigate('Contact')}>
                     <Text
                       style={{
                         backgroundColor: '#00adef',
@@ -154,14 +157,15 @@ const UdaipurDay = () => {
                       }}>
                       {data.btnText}
                     </Text>
-                  </TouchableOpacity>
-                </View>
+                  </TouchableHighlight>
+                </View> */}
+               
               </View>
             );
           })}
 
           <View style={{marginTop: 20}}>
-            <TouchableOpacity>
+            <TouchableHighlight onPress={()=>navigation.navigate('Contact')}>
               <Text
                 style={{
                   padding: 10,
@@ -173,7 +177,7 @@ const UdaipurDay = () => {
                 }}>
                 Yes, I Want To Book This Tour!
               </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
           </View>
         </View>
       </View>

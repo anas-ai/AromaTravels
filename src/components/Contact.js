@@ -1,234 +1,21 @@
-// import React from 'react';
-// import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-// import { useFormik } from 'formik';
-
-// const Contact = () => {
-//   const formik = useFormik({
-//     initialValues: {
-//       firstName: '',
-//       email: '',
-//       phoneNumber: '',
-//       country: '',
-//       travelDate: '',
-//       duration: '',
-//       adultCount: '',
-//       childrenCount: '',
-//       message: '',
-//     },
-//     onSubmit: values => {
-//       console.log(values);
-//     },
-//     validate: values => {
-//       const errors = {};
-//       if (!values.firstName) {
-//         errors.firstName = 'Required';
-//       }
-//       if (!values.email) {
-//         errors.email = 'Required';
-//       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-//         errors.email = 'Invalid email address';
-//       }
-//       if (!values.phoneNumber) {
-//         errors.phoneNumber = 'Required';
-//       } else if (!/^\d{10}$/i.test(values.phoneNumber)) {
-//         errors.phoneNumber = 'Invalid phone number';
-//       }
-//       if (!values.country) {
-//         errors.country = 'Required';
-//       }
-//       if (!values.travelDate) {
-//         errors.travelDate = 'Required';
-//       } else {
-//         const currentDate = new Date();
-//         const selectedDate = new Date(values.travelDate);
-//         if (selectedDate <= currentDate) {
-//           errors.travelDate = 'Travel date must be in the future';
-//         }
-//       }
-//       if (!values.duration) {
-//         errors.duration = 'Required';
-//       }
-//       if (!values.adultCount) {
-//         errors.adultCount = 'Required';
-//       }
-//       if (!values.childrenCount) {
-//         errors.childrenCount = 'Required';
-//       }
-//       if (!values.message) {
-//         errors.message = 'Required';
-//       }
-
-//       return errors;
-//     }
-//   });
-
-//   return (
-//     <ScrollView contentContainerStyle={styles.container}>
-//       <View style={styles.formContainer}>
-//         <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('firstName')}
-//           onBlur={formik.handleBlur('firstName')}
-//           value={formik.values.firstName}
-//           placeholder="First Name"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.firstName && <Text style={styles.errorText}>{formik.errors.firstName}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('email')}
-//           onBlur={formik.handleBlur('email')}
-//           value={formik.values.email}
-//           placeholder="Email"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.email && <Text style={styles.errorText}>{formik.errors.email}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('phoneNumber')}
-//           onBlur={formik.handleBlur('phoneNumber')}
-//           value={formik.values.phoneNumber}
-//           placeholder="Phone Number"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.phoneNumber && <Text style={styles.errorText}>{formik.errors.phoneNumber}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('country')}
-//           onBlur={formik.handleBlur('country')}
-//           value={formik.values.country}
-//           placeholder="Country"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.country && <Text style={styles.errorText}>{formik.errors.country}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('travelDate')}
-//           onBlur={formik.handleBlur('travelDate')}
-//           value={formik.values.travelDate}
-//           placeholder="Travel Date"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.travelDate && <Text style={styles.errorText}>{formik.errors.travelDate}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('duration')}
-//           onBlur={formik.handleBlur('duration')}
-//           value={formik.values.duration}
-//           placeholder="Duration"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.duration && <Text style={styles.errorText}>{formik.errors.duration}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('adultCount')}
-//           onBlur={formik.handleBlur('adultCount')}
-//           value={formik.values.adultCount}
-//           placeholder="Adult Count"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.adultCount && <Text style={styles.errorText}>{formik.errors.adultCount}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('childrenCount')}
-//           onBlur={formik.handleBlur('childrenCount')}
-//           value={formik.values.childrenCount}
-//           placeholder="Children Count"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.childrenCount && <Text style={styles.errorText}>{formik.errors.childrenCount}</Text>}
-
-//         <TextInput
-//           style={styles.input}
-//           onChangeText={formik.handleChange('message')}
-//           onBlur={formik.handleBlur('message')}
-//           value={formik.values.message}
-//           placeholder="Message"
-//           placeholderTextColor="#000"
-//         />
-//         {formik.errors.message && <Text style={styles.errorText}>{formik.errors.message}</Text>}
-
-//         <TouchableOpacity style={styles.button} onPress={formik.handleSubmit}>
-//           <Text style={styles.buttonText}>Send Message</Text>
-//         </TouchableOpacity>
-//       </View>
-//     </ScrollView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flexGrow: 1,
-//   },
-//   formContainer: {
-//     alignItems: 'center',
-//     margin: 20,
-//   },
-//   formHeading: {
-//     color: '#213e9a',
-//     fontSize: 27,
-//     fontWeight: 'normal',
-//     marginVertical: 20,
-//   },
-//   input: {
-//     height: 40,
-//     width: '100%',
-//     borderColor: 'gray',
-//     borderWidth: 1,
-//     marginBottom: 12,
-//     paddingHorizontal: 16,
-//     borderRadius: 8,
-//     color: '#000',
-//   },
-//   button: {
-//     backgroundColor: '#000',
-//     borderRadius: 8,
-//     padding: 12,
-//     marginTop: 20,
-//     width: '100%',
-//     alignItems: 'center',
-//   },
-//   buttonText: {
-//     color: '#fff',
-//     fontSize: 16,
-//     fontWeight: 'bold',
-//   },
-//   errorText: {
-//     color: 'red',
-//     marginBottom: ('1.5%'),
-//     marginRight:('80%'),
-//     marginTop:('-1%'),
-//     flexDirection:'row',
-//     flexWrap:'wrap'
-//   },
-// });
-
-// export default Contact;
-
-import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
+import React, { useState } from 'react';
+import { 
+  View, 
+  Text, 
+  ScrollView, 
+  StyleSheet, 
+  TextInput, 
+  TouchableOpacity, 
+  TouchableHighlight
 } from 'react-native';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
+import DropDownPicker from 'react-native-dropdown-picker';
 
-const Contact = () => {
+const ContactForm = () => {
   const formik = useFormik({
     initialValues: {
       firstName: '',
+      lastName: '',
       email: '',
       phoneNumber: '',
       country: '',
@@ -244,273 +31,246 @@ const Contact = () => {
     validate: values => {
       const errors = {};
       const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+      const nameRegex = /^([a-zA-z,/.-]+)\s([a-zA-z,/.-]+)$/; 
 
       if (!values.firstName) {
-        errors.firstName = 'Required';
-      } else if (!/^[A-Z][a-zA-Z]*$/.test(values.firstName)) {
-        errors.firstName =
-          'First name must start with an uppercase letter and contain only letters';
+        errors.firstName = 'First name is required';
+      } else if (!nameRegex.test(values.firstName)) {
+        errors.firstName = 'First name must start with an uppercase letter and contain only letters';
+       }
+
+      if (!values.lastName) {
+        errors.lastName = 'Last name is required';
+      } else if (!/^[A-Z][a-zA-Z]*$/.test(values.lastName)) {
+        errors.lastName = 'Last name must start with an uppercase letter and contain only letters';
       }
 
       if (!values.email) {
-        errors.email = 'Required';
+        errors.email = 'Email is required';
       } else if (!emailRegex.test(values.email)) {
-        errors.email =
-          'Please enter a valid email address in the format example@example.com';
+        errors.email = 'Invalid email address';
       }
 
       if (!values.phoneNumber) {
-        errors.phoneNumber = 'Required';
+        errors.phoneNumber = 'Phone number is required';
       } else if (!/^\d{10}$/i.test(values.phoneNumber)) {
-        errors.email = 'Please enter a valid 10-digit phone number';
+        errors.phoneNumber = 'Invalid phone number';
       }
 
       if (!values.country) {
-        errors.country = 'Required';
-      } else if (!isValidCountry(values.country)) {
-        errors.country = 'Invalid country';
+        errors.country = 'Country is required';
       }
 
       if (!values.travelDate) {
-        errors.travelDate = 'Required';
-      } else {
-        const currentDate = new Date();
-        const selectedDate = new Date(values.travelDate);
-
-        if (isNaN(selectedDate) || selectedDate <= currentDate) {
-          errors.travelDate = 'Date must be in (YYYY-MM-DD) format ';
-        }
+        errors.travelDate = 'Travel date is required';
+      } else if (!/^\d{4}-\d{2}-\d{2}$/i.test(values.travelDate)) {
+        errors.travelDate = 'Invalid date format (YYYY-MM-DD)';
       }
+      
 
       if (!values.duration) {
-        errors.duration = 'Required';
+        errors.duration = 'Duration is required';
       }
 
       if (!values.adultCount) {
-        errors.adultCount = 'Required';
+        errors.adultCount = 'Number of adults is required';
       }
 
       if (!values.childrenCount) {
-        errors.childrenCount = 'Required';
+        errors.childrenCount = 'Number of children is required';
       }
 
       if (!values.message) {
-        errors.message = 'Required';
-      } else if (values.message.length < 50){
-        errors.message= `Must be at least ${50} charactors`
+        errors.message = 'Message is required';
+      } else if (values.message.length < 50) {
+        errors.message = 'Message must be at least 50 characters';
       }
+      
       return errors;
     },
-    
   });
 
-  // country logic start
-  const isValidCountry = country => {
-    const ValidCountry = ['USA', 'India', 'Australia', 'UK'];
-    return ValidCountry.includes(country);
-  }; //end
+  // Dropdown state and data
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([
+    { label: 'India', value: 'India' },
+    { label: 'USA', value: 'USA' },
+    { label: 'Australia', value: 'Australia' },
+    { label: 'UK', value: 'UK' },
+  ]);
 
   return (
-    <ScrollView contentContainerStyle={Styles.container}>
-      <View style={Styles.formContainer}>
-        <Text style={Styles.formHeading}>Travel Aroma Enquiry Form</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.formContainer}>
+        <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
 
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('firstName')}
           onBlur={formik.handleBlur('firstName')}
           value={formik.values.firstName}
-          placeholder="First Name"
-          placeholderTextColor={'#252525'}
+          placeholder="Full Name"
         />
         {formik.errors.firstName ? (
           <Text
             style={
               formik.errors.firstName === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
+                ? styles.requiredErrorText
+                : styles.errorText
             }>
             {formik.errors.firstName}
           </Text>
         ) : null}
 
+        {/* <TextInput
+          style={styles.input}
+          onChangeText={formik.handleChange('lastName')}
+          onBlur={formik.handleBlur('lastName')}
+          value={formik.values.lastName}
+          placeholder="Last Name"
+        />
+        {formik.errors.lastName && <Text style={styles.errorText}>{formik.errors.lastName}</Text>} */}
+
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('email')}
           onBlur={formik.handleBlur('email')}
           value={formik.values.email}
           placeholder="Email"
-          placeholderTextColor={'#252525'}
+          keyboardType="email-address"
         />
-        {formik.errors.email ? (
-          <Text
-            style={
-              formik.errors.email === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.email}
-          </Text>
-        ) : null}
+        {formik.errors.email && <Text style={styles.errorText}>{formik.errors.email}</Text>}
 
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('phoneNumber')}
           onBlur={formik.handleBlur('phoneNumber')}
           value={formik.values.phoneNumber}
           placeholder="Phone Number"
-          placeholderTextColor={'#252525'}
+          keyboardType="phone-pad"
         />
-        {formik.errors.phoneNumber ? (
-          <Text
-            style={
-              formik.errors.phoneNumber === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.phoneNumber}
-          </Text>
-        ) : null}
+        {formik.errors.phoneNumber && <Text style={styles.errorText}>{formik.errors.phoneNumber}</Text>}
+
+        <DropDownPicker
+          open={open}
+          value={value}
+          items={items}
+          setOpen={setOpen}
+          setValue={setValue}
+          setItems={setItems}
+          placeholder="Select Country"
+          style={styles.dropDownPicker}
+          textStyle={styles.dropDownPickerText}
+          containerStyle={styles.dropDownPickerContainer}
+          onChangeValue={val => formik.setFieldValue('country', val)}
+        />
+        {formik.errors.country && <Text style={styles.errorText}>{formik.errors.country}</Text>}
 
         <TextInput
-          style={Styles.input}
-          onChangeText={formik.handleChange('country')}
-          onBlur={formik.handleBlur('country')}
-          value={formik.values.country}
-          placeholder="Country"
-          placeholderTextColor={'#252525'}
-        />
-        {formik.errors.country ? (
-          <Text
-            style={
-              formik.errors.country === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.country}
-          </Text>
-        ) : null}
-
-        <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('travelDate')}
           onBlur={formik.handleBlur('travelDate')}
           value={formik.values.travelDate}
-          placeholder="travelDate"
-          placeholderTextColor={'#252525'}
+          placeholder="Travel Date (YYYY-MM-DD)"
+          keyboardType="numeric"
         />
-        {formik.errors.travelDate ? (
-          <Text
-            style={
-              formik.errors.travelDate === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.travelDate}
-          </Text>
-        ) : null}
+        {formik.errors.travelDate && <Text style={styles.errorText}>{formik.errors.travelDate}</Text>}
 
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('duration')}
           onBlur={formik.handleBlur('duration')}
           value={formik.values.duration}
-          placeholder="duration"
-          placeholderTextColor={'#252525'}
+          placeholder="Duration of Travel eg 2N-3D"
         />
-        {formik.errors.duration ? (
-          <Text
-            style={
-              formik.errors.duration === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.duration}
-          </Text>
-        ) : null}
+        {formik.errors.duration && <Text style={styles.errorText}>{formik.errors.duration}</Text>}
 
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('adultCount')}
           onBlur={formik.handleBlur('adultCount')}
           value={formik.values.adultCount}
-          placeholder="adult Count"
-          placeholderTextColor={'#000'}
+          placeholder="Number of Adults"
+          keyboardType="numeric"
         />
-        {formik.errors.adultCount ? (
-          <Text
-            style={
-              formik.errors.adultCount === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.adultCount}
-          </Text>
-        ) : null}
+        {formik.errors.adultCount && <Text style={styles.errorText}>{formik.errors.adultCount}</Text>}
 
         <TextInput
-          style={Styles.input}
+          style={styles.input}
           onChangeText={formik.handleChange('childrenCount')}
           onBlur={formik.handleBlur('childrenCount')}
           value={formik.values.childrenCount}
-          placeholder="children Count"
-          placeholderTextColor={'#000'}
+          placeholder="Number of Children"
+          keyboardType="numeric"
         />
-        {formik.errors.childrenCount ? (
-          <Text
-            style={
-              formik.errors.childrenCount === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.childrenCount}
-          </Text>
-        ) : null}
+        {formik.errors.childrenCount && <Text style={styles.errorText}>{formik.errors.childrenCount}</Text>}
 
         <TextInput
-          style={Styles.input}
+          style={[styles.input, styles.messageInput]}
           onChangeText={formik.handleChange('message')}
           onBlur={formik.handleBlur('message')}
           value={formik.values.message}
-          placeholder="Message"
-          placeholderTextColor={'#000'}
+          placeholder="Message (at least 50 characters)"
+          multiline
         />
+        {formik.errors.message && <Text style={styles.errorText}>{formik.errors.message}</Text>}
 
-        {formik.errors.message ? (
-          <Text
-            style={
-              formik.errors.message === 'Required'
-                ? Styles.requiredErrorText
-                : Styles.errorText
-            }>
-            {formik.errors.message}
-          </Text>
-        ) : null}
-
-        <TouchableOpacity style={Styles.button} onPress={formik.handleSubmit}>
-          <Text style={Styles.buttonText}>Send Message</Text>
-        </TouchableOpacity>
+        <TouchableHighlight style={styles.button} onPress={formik.handleSubmit}>
+          <Text style={styles.buttonText}>Send Message</Text>
+        </TouchableHighlight>
       </View>
     </ScrollView>
   );
 };
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    padding: 20,
+    backgroundColor: '#f0f0f0',
   },
   formContainer: {
     alignItems: 'center',
-    margin: 15,
   },
   formHeading: {
     color: '#213e9a',
     fontSize: 27,
-    fontWeight: 'normal',
-    marginVertical: 15,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    height: 40,
+    width: '100%',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    marginBottom: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    color: '#333',
+    backgroundColor: '#fff',
+  },
+  messageInput: {
+    height: 100,
+    textAlignVertical: 'top',
+  },
+  dropDownPicker: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    marginBottom: 12,
+    borderRadius: 8,
+    backgroundColor: '#fff',
+  },
+  dropDownPickerText: {
+    color: '#333',
+  },
+  dropDownPickerContainer: {
+    marginBottom: 12,
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: '#213e9a',
     borderRadius: 8,
     padding: 12,
     marginTop: 20,
@@ -522,31 +282,18 @@ const Styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  input: {
-    height: 40,
-    width: '100%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 12,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    color: '#000',
-  },
   errorText: {
     color: 'red',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginBottom: 5,
-    width: '100%',
+    marginBottom: 8,
+    marginRight: '15%', 
+    width:'80%'
   },
   requiredErrorText: {
     color: 'red',
-    marginBottom: '1.5%',
-    marginRight: '80%',
-    marginTop: '-1%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    marginBottom: 5,
+    marginRight: 40, 
+    fontWeight: 'bold',
   },
 });
 
-export default Contact;
+export default ContactForm;

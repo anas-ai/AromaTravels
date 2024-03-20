@@ -8,18 +8,26 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-import { RFPercentage } from 'react-native-responsive-fontsize';
-import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import {RFPercentage} from 'react-native-responsive-fontsize';
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from 'react-native-responsive-screen';
 import Swiper from 'react-native-swiper';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 import Welcome from '../components/Welcome';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MultiSlider from '../components/MultiSlider';
 import CarSlider from '../components/CarSlider';
-import { FadeIn, FadeOut } from 'react-native-reanimated';
+import {FadeIn, FadeOut} from 'react-native-reanimated';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
   const images = [
@@ -56,6 +64,7 @@ const Home = () => {
     },
   ];
 
+  const navigation = useNavigation();
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
@@ -84,7 +93,11 @@ const Home = () => {
 
         <View style={styles.lineContainer}>
           <View style={styles.line} />
-          <FontIcon name="camera-retro" color={'#213e9a'} size={RFPercentage(4)} />
+          <FontIcon
+            name="camera-retro"
+            color={'#213e9a'}
+            size={RFPercentage(4)}
+          />
           <View style={styles.line} />
         </View>
 
@@ -95,23 +108,26 @@ const Home = () => {
           </Text>
         </View>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} autoplayInterval={true} duration={1000}>
-      {HomeImages.map((item, index) => (
-        <View key={index} style={styles.imageContainer}>
-          <ImageBackground source={item.image} style={styles.images}>
-            <Text style={styles.name}>
-              {item.name}
-            </Text>
-          </ImageBackground>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          autoplayInterval={true}
+          duration={1000}>
+          {HomeImages.map((item, index) => (
+            <View key={index} style={styles.imageContainer}>
+              <ImageBackground source={item.image} style={styles.images}>
+                <Text style={styles.name}>{item.name}</Text>
+              </ImageBackground>
+            </View>
+          ))}
+        </ScrollView>
 
-          
-          
-        </View>
-      ))}
-    </ScrollView>
-
-        <TouchableOpacity style={styles.viewMoreButton}>
-          <Text style={styles.viewMoreButtonText}>View More This Sightseeing!</Text>
+        <TouchableOpacity
+          style={styles.viewMoreButton}
+          onPress={() => navigation.navigate('UdaipurDay')}>
+          <Text style={styles.viewMoreButtonText}>
+            View More This Sightseeing!
+          </Text>
         </TouchableOpacity>
 
         <View style={styles.textContainer}>
@@ -120,7 +136,11 @@ const Home = () => {
 
         <View style={styles.lineContainer}>
           <View style={styles.line} />
-          <FontIcon name="camera-retro" color={'#213e9a'} size={RFPercentage(4)} />
+          <FontIcon
+            name="camera-retro"
+            color={'#213e9a'}
+            size={RFPercentage(4)}
+          />
           <View style={styles.line} />
         </View>
 
@@ -134,7 +154,7 @@ const Home = () => {
         {/* <Welcome /> */}
         <Contact />
         <CarSlider />
-        <Footer />
+        {/* <Footer /> */}
       </View>
     </ScrollView>
   );
@@ -183,7 +203,7 @@ const styles = StyleSheet.create({
   swiper: {
     height: heightPercentageToDP('30%'),
     marginVertical: heightPercentageToDP('-1%'),
-    transition:'ease'
+    transition: 'ease',
   },
   slide: {
     // flex: 1,
@@ -202,16 +222,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('2%'),
-    borderRadius:responsiveHeight(8),
-    borderRadius:responsiveWidth(8),
-    overflow:'hidden'
+    borderRadius: responsiveHeight(8),
+    borderRadius: responsiveWidth(8),
+    overflow: 'hidden',
   },
-  images:{
+  images: {
     height: heightPercentageToDP('30%'),
     width: heightPercentageToDP('35%'),
     resizeMode: 'contain',
-    margin:responsiveWidth(1),
-    position:'relative',
+    margin: responsiveWidth(1),
+    position: 'relative',
   },
   viewMoreButton: {
     backgroundColor: '#00adef',
@@ -234,7 +254,7 @@ const styles = StyleSheet.create({
     left: responsiveWidth(13),
     fontSize: responsiveFontSize(2.5),
     textShadowColor: '#252525',
-    textShadowOffset: { width: 3, height: 2 },
+    textShadowOffset: {width: 3, height: 2},
     textShadowRadius: 5,
     textAlign: 'justify',
     marginLeft: responsiveFontSize(-5),

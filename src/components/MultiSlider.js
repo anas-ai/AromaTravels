@@ -1,6 +1,7 @@
 import { View, Text ,Image,TouchableOpacity} from 'react-native'
 import React from 'react'
 import {SliderBox} from 'react-native-image-slider-box';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -53,6 +54,7 @@ const MultiSlider = () => {
         },
       ];
     
+   const navigation = useNavigation();   
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
     <SliderBox
@@ -111,7 +113,7 @@ const MultiSlider = () => {
                       }}>
                       {elem.title}
                     </Text>
-                    <TouchableOpacity style={{margin: 10}}>
+                    <TouchableOpacity style={{margin: 10}} onPress={()=>navigation.navigate('UdaipurDay')}>
                       <Text
                         style={{
                           backgroundColor: '#00adef',
@@ -155,7 +157,7 @@ const MultiSlider = () => {
                     }}>
                     {subElem.title}
                   </Text>
-                  <TouchableOpacity style={{margin: 10}}>
+                  <TouchableOpacity style={{margin: 10}} onPress={()=>navigation.navigate('UdaipurDay')}>
                     <Text
                       style={{
                         backgroundColor: '#00adef',

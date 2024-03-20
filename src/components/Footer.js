@@ -1,10 +1,19 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
-import { create } from 'react-test-renderer'
+import {
+  View,
+  Text,
+  StyleSheet,
+  Linking,
+  TouchableHighlight,
+} from 'react-native';
+import React from 'react';
+import {create} from 'react-test-renderer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Icontwo from 'react-native-vector-icons/Zocial';
 
+const links = url => {
+  Linking.openURL(url);
+};
 
 const Footer = () => {
   return (
@@ -49,27 +58,69 @@ const Footer = () => {
 
       {/* <View style={{borderTopWidth:0.5,borderColor:'white',margin:10,paddingTop:8}}><Text style={styles.text2}>© 2020 Travel Aroma. All rights reserved</Text> */}
       <View>
-      <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row'}}> 
-      <Icontwo style={{margin:10,paddingBottom:8}} name='facebook' size={20} color="white"/>
-      <Entypo  style={{margin:10}} name='tripadvisor' size={22} color="white"/>
-      <Entypo  style={{margin:10}} name='instagram' size={18} color="white"/>
-      <Icon  style={{margin:10}} name="google-plus" size={20} color="white"/>
-      </View>
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+          }}>
+          <TouchableHighlight
+            onPress={() =>
+              links('https://www.facebook.com/Travel-Aroma-100735494824270/')
+            }>
+            <Icontwo
+              style={{margin: 10, paddingBottom: 8}}
+              name="facebook"
+              size={20}
+              color="white"
+            />
+          </TouchableHighlight>
+          <TouchableHighlight onPress={()=>links('https://www.tripadvisor.in/Attraction_Review-g297672-d19947403-Reviews-Travel_Aroma-Udaipur_Udaipur_District_Rajasthan.html')}>
+            <Entypo
+              style={{margin: 10}}
+              name="tripadvisor"
+              size={22}
+              color="white"
+            />
+          </TouchableHighlight>
+          <TouchableHighlight onPress={()=>links('https://www.instagram.com/Travelaroma01/')}>
+            <Entypo
+              style={{margin: 10}}
+              name="instagram"
+              size={18}
+              color="white"
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={()=>links('https://www.travelaroma.in/contact.html#')}>
+            <Icon
+              style={{margin: 10}}
+              name="google-plus"
+              size={20}
+              color="white"
+            />
+          </TouchableHighlight>
+        </View>
       </View>
     </View>
-  )
-}
+  );
+};
+{/* <TouchableOpacity
+  onPress={() =>
+    links('https://www.facebook.com/Travel-Aroma-100735494824270/')
+  }>
+  <Ionicons name="logo-facebook" style={styles.socialIcon} />
+</TouchableOpacity>; */}
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black'
-
+    backgroundColor: 'black',
   },
   title: {
     color: '#00adef',
     fontSize: 22,
     margin: 12,
-    fontWeight: 'light'
+    fontWeight: 'light',
   },
   text: {
     color: 'white',
@@ -77,23 +128,23 @@ const styles = StyleSheet.create({
     margin: 1.5,
     marginLeft: 15,
     fontWeight: 'light',
-    },
-    text2: {
-      color: 'white',
-      fontSize: 17,
-      margin: 1.5,
-      marginLeft: 15,
-      fontWeight: 'light',
-      textAlign:'center',
-      },
-      text3: {
-        color: 'white',
-        fontSize: 16,
-        margin: 1.5,
-        marginLeft: 15,
-        fontWeight: 'light',
-        // fontWeight:'300'
-        },
+  },
+  text2: {
+    color: 'white',
+    fontSize: 17,
+    margin: 1.5,
+    marginLeft: 15,
+    fontWeight: 'light',
+    textAlign: 'center',
+  },
+  text3: {
+    color: 'white',
+    fontSize: 16,
+    margin: 1.5,
+    marginLeft: 15,
+    fontWeight: 'light',
+    // fontWeight:'300'
+  },
   iconText: {
     color: '#00adef',
     fontSize: 17,
@@ -101,8 +152,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     fontWeight: 'light',
     marginVertical: 10,
+  },
+});
 
-  }
-})
-
-export default Footer
+export default Footer;
