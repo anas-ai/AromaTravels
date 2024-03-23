@@ -1,184 +1,801 @@
-import { View, Text ,Image,TouchableOpacity} from 'react-native'
-import React from 'react'
-import {SliderBox} from 'react-native-image-slider-box';
+// // import { View, Text ,Image,TouchableOpacity} from 'react-native'
+// // import React from 'react'
+// // import {SliderBox} from 'react-native-image-slider-box';
+
+
+
+// // const MultiSlider = () => {
+
+// // const multiSlider = [
+// //   {
+// //     imageOne: [
+// //       {
+// //         id: 1,
+// //         title: 'Udaipur Sightseeing Tour',
+// //         images: require('../images/udaipur.jpg'),
+// //         btnText: 'view Package',
+// //       },
+// //       {
+// //         id: 2,
+// //         title: 'Eklingji-Nathdwara-Haldighati Tour',
+// //         images: require('../images/Eklingji-Nathdwara.jpg'),
+// //         btnText: 'view Package',
+// //       },
+// //       {
+// //         id: 3,
+// //         title: 'Kumbhalgarh-Haldighati Tour',
+// //         images: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
+// //         btnText: 'view Package',
+// //       },
+// //     ],
+// //   },
+// //   {
+// //     two: [
+// //       {
+// //         id: 4,
+// //         title: 'Ranakpur-Kumbhalgarh tour',
+// //         images: require('../images/Ranakpur.jpg'),
+// //         btnText: 'view Package',
+// //       },
+// //       {
+// //         id: 5,
+// //         title: 'Chittorgarh Tour',
+// //         images: require('../images/Chittorgarh-Fort-Chittorgarh.png'),
+// //         btnText: 'view Package',
+// //       },
+// //       {
+// //         id: 6,
+// //         title: 'Mount Abu Tour',
+// //         images: require('../images/mount-abu.jpg'),
+// //         btnText: 'view Package',
+// //       },
+// //     ],
+// //   },
+// // ];
+
+// //   return (
+// //     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+// //     <SliderBox
+// //       resizeMode="cover"
+// //       images={multiSlider}
+// //       dotcolor="#213e9a"
+// //       inactiveDotColor="#213e9a"
+// //       dotStyle={{
+// //         height: 10,
+// //         width: 10,
+// //         borderRadius: 50,
+// //         marginBottom: 5,
+// //       }}
+// //       autoplay={true}
+// //       autoplayInterval={3000}
+// //       circleLoop={true}
+// //       SliderBoxHeight={200}
+// //       imageLoadingColor="#fff"
+// //       style={{width: '100%', height: 250}}
+// //       animateTransitions={true}
+// //       duration={1000}
+// //       slideBoxHeight={250}
+// //       disableOnPress={true}
+// //       data={multiSlider}
+
+// //       renderItem={({item, index}) => {
+// //         return (
+// //           <View key={index} style={{flex:1}}>
+// //             {item &&item?.imageOne?.length > 0 &&item?.imageOne?.map((elem, index) => {
+// //                 return (
+// //                   <View
+// //                     key={index}
+// //                     style={{
+// //                       alignItems: 'center',
+// //                       justifyContent: 'center',
+// //                       margin: 10,
+// //                       borderWidth: .5,
+// //                       borderColor: '#252525',
+// //                       borderRadius: 10,
+// //                       flex:1
+// //                     }}>
+// //                     <Image
+// //                       source={elem.images}
+// //                       style={{
+// //                         width: '100%',
+// //                         height: 200,
+// //                         resizeMode: 'cover',
+// //                       }}
+// //                     />
+// //                     <Text
+// //                       style={{
+// //                         color: '#252525',
+// //                         fontWeight: 'bold',
+// //                         fontSize: 20,
+// //                         marginBottom: 10,
+// //                         marginTop:5
+// //                       }}>
+// //                       {elem.title}
+// //                     </Text>
+// //                     <TouchableOpacity style={{margin: 10}}>
+// //                       <Text
+// //                         style={{
+// //                           backgroundColor: '#00adef',
+// //                           color: '#fff',
+// //                           padding: 10,
+// //                           fontSize: 18,
+// //                         }}>
+// //                         {elem.btnText}
+// //                       </Text>
+// //                     </TouchableOpacity>
+// //                   </View>
+// //                 );
+// //               })}
+
+// //             {item?.two?.map((subElem, index) => {
+// //               return (
+// //                 <View
+// //                   key={index}
+// //                   style={{
+// //                     alignItems: 'center',
+// //                     justifyContent: 'center',
+// //                     margin: 10,
+// //                     borderWidth: .5,
+// //                     borderColor: '#252525',
+// //                     borderRadius: 10,
+// //                   }}>
+// //                   <Image
+// //                     source={subElem.images}
+// //                     style={{
+// //                       width: '100%',
+// //                       height: 200,
+// //                       resizeMode: 'cover',
+// //                     }}
+// //                   />
+// //                   <Text
+// //                     style={{
+// //                       color: '#252525',
+// //                       fontWeight: 'bold',
+// //                       fontSize: 20,
+// //                       marginBottom: 10,
+// //                     }}>
+// //                     {subElem.title}
+// //                   </Text>
+// //                   <TouchableOpacity style={{margin: 10}}>
+// //                     <Text
+// //                       style={{
+// //                         backgroundColor: '#00adef',
+// //                         color: '#fff',
+// //                         padding: 10,
+// //                         fontSize: 18,
+// //                         margin:15,
+// //                         fontWeight:'normal'
+// //                       }}>
+// //                       {subElem.btnText}
+// //                     </Text>
+// //                   </TouchableOpacity>
+// //                 </View>
+// //               );
+// //             })}
+// //           </View>
+// //         );
+// //       }}
+// //     />
+// //   </View>
+// // )
+// // }
+
+// // export default MultiSlider
+// import React from 'react';
+// import { View, Text, Image, TouchableOpacity } from 'react-native';
+
+// const MultiSlider = () => {
+//   const item = [
+//     [{
+//       id: 1,
+//       title: 'Udaipur Sightseeing Tour',
+//       images: require('../images/udaipur.jpg'),
+//       btnText: 'view Package',
+//     }],
+//     [{
+//       id: 2,
+//       title: 'Eklingji-Nathdwara-Haldighati Tour',
+//       images: require('../images/Eklingji-Nathdwara.jpg'),
+//       btnText: 'view Package',
+//     }],
+//     [{
+//       id: 3,
+//       title: 'Kumbhalgarh-Haldighati Tour',
+//       images: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
+//       btnText: 'view Package',
+//     }],
+//     [{
+//       id: 4,
+//       title: 'Ranakpur-Kumbhalgarh tour',
+//       images: require('../images/Ranakpur.jpg'),
+//       btnText: 'view Package',
+//     }],
+//     [{
+//       id: 5,
+//       title: 'Chittorgarh Tour',
+//       images: require('../images/Chittorgarh-Fort-Chittorgarh.png'),
+//       btnText: 'view Package',
+//     }],
+//     [{
+//       id: 6,
+//       title: 'Mount Abu Tour',
+//       images: require('../images/mount-abu.jpg'),
+//       btnText: 'view Package',
+//     }],
+//   ];
+
+//   const midpointIndex = Math.ceil(item.length / 2);
+
+//   return (
+//     <View style={{ flexDirection: 'row' }}>
+//       {/* first array */}
+//       <View style={{ flex: 1 }}>
+//         {item.slice(0, midpointIndex).map((subElem, index) => (
+//           <View
+//             key={index}
+//             style={{
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//               margin: 10,
+//               borderWidth: 0.5,
+//               borderColor: '#252525',
+//               borderRadius: 10,
+//             }}
+//           >
+//             <Image
+//               source={subElem.images}
+//               style={{
+//                 width: '100%',
+//                 height: 200,
+//                 resizeMode: 'cover',
+//               }}
+//             />
+//             <Text
+//               style={{
+//                 color: '#252525',
+//                 fontWeight: 'bold',
+//                 fontSize: 20,
+//                 marginBottom: 10,
+//               }}
+//             >
+//               {subElem.title}
+//             </Text>
+//             <TouchableOpacity style={{ margin: 10 }}>
+//               <Text
+//                 style={{
+//                   backgroundColor: '#00adef',
+//                   color: '#fff',
+//                   padding: 10,
+//                   fontSize: 18,
+//                   margin: 15,
+//                   fontWeight: 'normal',
+//                 }}
+//               >
+//                 {subElem.btnText}
+//               </Text>
+//             </TouchableOpacity>
+//           </View>
+//         ))}
+//       </View>
+
+//       {/* second */}
+//       <View style={{ flex: 1 }}>
+//         {item.slice(midpointIndex).map((subElem, index) => (
+//           <View
+//             key={index + midpointIndex}
+//             style={{
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//               margin: 10,
+//               borderWidth: 0.5,
+//               borderColor: '#252525',
+//               borderRadius: 10,
+//             }}
+//           >
+//             <Image
+//               source={subElem.images}
+//               style={{
+//                 width: '100%',
+//                 height: 200,
+//                 resizeMode: 'cover',
+//               }}
+//             />
+//             <Text
+//               style={{
+//                 color: '#252525',
+//                 fontWeight: 'bold',
+//                 fontSize: 20,
+//                 marginBottom: 10,
+//               }}
+//             >
+//               {subElem.title}
+//             </Text>
+//             <TouchableOpacity style={{ margin: 10 }}>
+//               <Text
+//                 style={{
+//                   backgroundColor: '#00adef',
+//                   color: '#fff',
+//                   padding: 10,
+//                   fontSize: 18,
+//                   margin: 15,
+//                   fontWeight: 'normal',
+//                 }}
+//               >
+//                 {subElem.btnText}
+//               </Text>
+//             </TouchableOpacity>
+//           </View>
+//         ))}
+//       </View>
+//     </View>
+//   );
+// }
+
+// export default MultiSlider;
+
+// 6 ek sath ate h
+// import { useNavigation } from '@react-navigation/native';
+// import React from 'react';
+// import { View, Text, Image, TouchableOpacity } from 'react-native';
+// import { responsiveWidth } from 'react-native-responsive-dimensions';
+
+// const MultiSlider = () => {
+//   const items = [
+//     {
+//       id: 1,
+//       title: 'Udaipur Sightseeing ',
+//       text1: 'Tour',
+//       image: require('../images/udaipur.jpg'),
+//       btnText: 'view Package',
+//       btnlink: 'UdaipurDay',
+
+//     },
+//     {
+//       id: 2,
+//       title: 'Eklingji Nathdwara ',
+//       text1: ' HaldighatiTour',
+//       image: require('../images/Eklingji-Nathdwara.jpg'),
+//       btnText: 'view Package',
+//       btnlink: 'Ekling',
+
+//     },
+//     {
+//       id: 3,
+//       title: 'Kumbhalgarh ',
+//       text1: 'Haldighati',
+//       text2: 'Tour',
+//       image: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
+//       btnText: 'view Package',
+//       btnlink: 'Kumbhalgarh',
+
+//     },
+//     {
+//       id: 4,
+//       title: 'Ranakpur ',
+//       text1: 'Kumbhalgarh',
+//       text2: 'Tour',
+//       image: require('../images/Ranakpur.jpg'),
+//       btnText: 'view Package',
+//       btnlink: 'Ranakpur',
+
+//     },
+//     {
+//       id: 5,
+//       title: 'Chittorgarh',
+//       text1: 'Tour',
+//       image: require('../images/Chittorgarh-Fort-Chittorgarh.png'),
+//       btnText: 'view Package',
+//       btnlink: 'Chittorgarh',
+
+//     },
+//     {
+//       id: 6,
+//       title: 'Mount Abu',
+//       text1: 'Tour',
+//       image: require('../images/mount-abu.jpg'),
+//       btnText: 'view Package',
+//       btnlink: 'MountAbu',
+
+//     },
+//   ];
+//   const navigation = useNavigation()
+//   const handlePress = (btnlink) => {
+//     if (btnlink) {
+//       navigation.navigate(btnlink);
+//     }
+//   };
+
+//   return (
+//     <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+//       {items.map(item => (
+//         <View
+//           key={item.id}
+//           style={{
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             margin: 10,
+//             borderWidth: 0.5,
+//             borderColor: '#252525',
+//             borderRadius: 10,
+//             width: responsiveWidth(45),
+//           }}
+//         >
+//           <Image
+//             source={item.image}
+//             style={{
+//               width: '100%',
+//               height: 200,
+//               resizeMode: 'cover',
+//               borderRadius: 10,
+//             }}
+//           />
+//           <Text
+//             style={{
+//               color: '#252525',
+//               fontWeight: 'bold',
+//               fontSize: 19,
+//               top: 20,
+//               textAlign: 'justify',
+//               // marginBottom: 10,
+//               // marginTop: 5,
+//             }}
+//           >
+//             {item.title}
+//           </Text>
+//           <Text
+//             style={{
+//               color: '#252525',
+//               fontWeight: 'bold',
+//               fontSize: 19,
+//               top: 20,
+//               textAlign: 'justify',
+//               // marginBottom: 10,
+//               // marginTop: 5,
+//             }}
+//           >
+//             {item.text1}
+//           </Text>
+//           <Text
+//             style={{
+//               color: '#252525',
+//               fontWeight: 'bold',
+//               fontSize: 19,
+//               top: 20,
+//               textAlign: 'justify',
+//               // marginBottom: 10,
+//               // marginTop: 5,
+//             }}
+//           >
+//             {item.text2}
+//           </Text>
+//           <TouchableOpacity
+//            onPress={()=>handlePress(item.btnlink)} style={{ margin: 10 }}>
+//             <Text
+//               style={{
+//                 backgroundColor: '#00adef',
+//                 color: '#fff',
+//                 padding: 10,
+//                 fontSize: 18,
+//                 margin: 15,
+//                 fontWeight: 'normal',
+//               }}
+//             >
+//               {item.btnText}
+//             </Text>
+//           </TouchableOpacity>
+//         </View>
+//       ))}
+//     </View>
+//   );
+// }
+
+// export default MultiSlider;
+
+
+import React from 'react';
+import { View, Text, TouchableOpacity, Image, ScrollView, StyleSheet } from 'react-native';
+import { SliderBox } from 'react-native-image-slider-box';
+import FontIcon from 'react-native-vector-icons/FontAwesome';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { useNavigation } from '@react-navigation/native';
 
+const CarSliderImg = [
+  {
+    one: [
+      {
+        id: 1,
+        title: 'Udaipur Sightseeing ',
+        text1: 'Tour',
+        image: require('../images/udaipur.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'UdaipurDay',
 
+      },
+      {
+        id: 2,
+        title: 'Eklingji Nathdwara ',
+        text1: ' HaldighatiTour',
+        image: require('../images/Eklingji-Nathdwara.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'Ekling',
+
+      },
+      {
+        id: 3,
+        title: 'Kumbhalgarh ',
+        text1: 'Haldighati',
+        text2: 'Tour',
+        image: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
+        btnTxt: 'view Package',
+        btnlink: 'Kumbhalgarh',
+
+      },
+      {
+        id: 4,
+        title: 'Ranakpur ',
+        text1: 'Kumbhalgarh',
+        text2: 'Tour',
+        image: require('../images/Ranakpur.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'Ranakpur',
+
+      },
+    ],
+  },
+  {
+    two: [
+      {
+        id: 5,
+        title: 'Chittorgarh',
+        text1: 'Tour',
+        image: require('../images/Chittorgarh-Fort-Chittorgarh.png'),
+        btnTxt: 'view Package',
+        btnlink: 'Chittorgarh',
+
+      },
+      {
+        id: 6,
+        title: 'Mount Abu',
+        text1: 'Tour',
+        image: require('../images/mount-abu.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'MountAbu',
+
+      },
+      {
+        id: 7,
+        image: require('../images/udaipur.jpg'),
+        title: 'Udaipur Sightseeing ',
+        text1: 'Tour',
+        // text2: 'Passengers: 4 (including Driver)',
+        btnTxt: 'view Package',
+        btnlink: 'MountAbu',
+
+      },
+      {
+        id: 8,
+        image: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
+        title: 'Kumbhalgarh',
+        text1: 'Haldighati',
+        text2: 'Tour',
+        btnTxt: 'view Package',
+      },
+    ],
+  },
+  // {
+  //   three: [
+  //     {
+  //       id: 9,
+  //       image: require('../images/CarSliderImg/taxi-09.jpg'),
+  //       title: 'Mercedes-Benz',
+  //       text1: 'Air Conditoned',
+  //       text2: 'Passengers: 4 (including Driver)',
+  //       btnTxt: 'Book Now',
+  //     },
+  //     {
+  //       id: 10,
+  //       image: require('../images/CarSliderImg/taxi-10.jpg'),
+  //       title: 'BMW',
+  //       text1: 'Air Conditoned',
+  //       text2: 'Passengers: 4 (including Driver)',
+  //       btnTxt: 'Book Now',
+  //     },
+  //     {
+  //       id: 11,
+  //       image: require('../images/CarSliderImg/taxi-11.jpg'),
+  //       title: 'Toyota Camry',
+  //       text1: 'Air Conditoned',
+  //       text2: 'Passengers: 4 (including Driver)',
+  //       btnTxt: 'Book Now',
+  //     },
+  //     {
+  //       id: 12,
+  //       image: require('../images/CarSliderImg/taxi-12.jpg'),
+  //       title: 'Open Mercedes-Benz',
+  //       text1: 'Air Conditoned',
+  //       text2: 'Passengers: 4 (including Driver)',
+  //       btnTxt: 'Book Now',
+  //     },
+  //   ],
+  // },
+];
 
 const MultiSlider = () => {
-  
-    const multiSlider = [
-        {
-          imageOne: [
-            {
-              id: 1,
-              title: 'Udaipur Sightseeing Tour',
-              images: require('../images/udaipur.jpg'),
-              btnText: 'view Package',
-            },
-            {
-              id: 2,
-              title: 'Eklingji-Nathdwara-Haldighati Tour',
-              images: require('../images/Eklingji-Nathdwara.jpg'),
-              btnText: 'view Package',
-            },
-            {
-              id: 3,
-              title: 'Kumbhalgarh-Haldighati Tour',
-              images: require('../images/Kumbhalgarh-Fort-Udaipur.png'),
-              btnText: 'view Package',
-            },
-          ],
-        },
-        {
-          two: [
-            {
-              id: 4,
-              title: 'Ranakpur-Kumbhalgarh tour',
-              images: require('../images/Ranakpur.jpg'),
-              btnText: 'view Package',
-            },
-            {
-              id: 5,
-              title: 'Chittorgarh Tour',
-              images: require('../images/Chittorgarh-Fort-Chittorgarh.png'),
-              btnText: 'view Package',
-            },
-            {
-              id: 6,
-              title: 'Mount Abu Tour',
-              images: require('../images/mount-abu.jpg'),
-              btnText: 'view Package',
-            },
-          ],
-        },
-      ];
-    
-   const navigation = useNavigation();   
+  const navigation = useNavigation()
+  const handlePress = (btnlink) => {
+    if (btnlink) {
+      navigation.navigate(btnlink);
+    }
+  };
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-    <SliderBox
-      resizeMode="cover"
-      images={multiSlider}
-      dotcolor="#213e9a"
-      inactiveDotColor="#213e9a"
-      dotStyle={{
-        height: 10,
-        width: 10,
-        borderRadius: 50,
-        marginBottom: 5,
-      }}
-      autoplay={true}
-      autoplayInterval={3000}
-      circleLoop={true}
-      SliderBoxHeight={200}
-      imageLoadingColor="#fff"
-      style={{width: '100%', height: 250}}
-      animateTransitions={true}
-      duration={1000}
-      slideBoxHeight={250}
-      disableOnPress={true}
-      data={multiSlider}
-      
-      renderItem={({item, index}) => {
-        return (
-          <View key={index} style={{flex:1}}>
-            {item &&item?.imageOne?.length > 0 &&item?.imageOne?.map((elem, index) => {
-                return (
-                  <View
-                    key={index}
-                    style={{
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      margin: 10,
-                      borderWidth: .5,
-                      borderColor: '#252525',
-                      borderRadius: 10,
-                      flex:1
-                    }}>
-                    <Image
-                      source={elem.images}
-                      style={{
-                        width: '100%',
-                        height: 200,
-                        resizeMode: 'cover',
-                      }}
-                    />
-                    <Text
-                      style={{
-                        color: '#252525',
-                        fontWeight: 'bold',
-                        fontSize: 20,
-                        marginBottom: 10,
-                      }}>
-                      {elem.title}
-                    </Text>
-                    <TouchableOpacity style={{margin: 10}} onPress={()=>navigation.navigate('UdaipurDay')}>
-                      <Text
-                        style={{
-                          backgroundColor: '#00adef',
-                          color: '#fff',
-                          padding: 10,
-                          fontSize: 18,
-                        }}>
-                        {elem.btnText}
-                      </Text>
-                    </TouchableOpacity>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 10,
+      }}>
+
+      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1, flexGrow: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+        <SliderBox
+          resizeMode="cover"
+          images={CarSliderImg}
+          dotcolor="#213e9a"
+          inactiveDotColor="#213e9a"
+          dotStyle={{
+            height: 10,
+            width: 10,
+            borderRadius: 50,
+            marginTop: 10,
+          }}
+          autoplay={true}
+          autoplayInterval={3000}
+          circleLoop={false}
+          sliderBoxHeight={200}
+          imageLoadingColor="#fff"
+          style={{ width: '100%', height: 250 }}
+          animateTransitions={true}
+          duration={1000}
+          slideBoxHeight={250}
+          disableOnPress={true}
+          data={CarSliderImg}
+          renderItem={({ item, index }) => {
+            return (
+              <View key={index} style={styles.container}>
+                {item?.one?.map((elem, index) => (
+                  <View key={index} style={styles.itemContainer}>
+                    <Image source={elem.image} style={styles.image} />
+                    <View style={styles.itemContent}>
+                      <Text style={styles.title}>{elem.title}</Text>
+                      <Text style={styles.text1}>{elem.text1}</Text>
+                      <Text style={styles.text2}>{elem.text2}</Text>
+                      <TouchableOpacity onPress={() => {
+                        navigation.navigate('Contact')
+                      }} style={styles.button}>
+                        <Text style={styles.buttonText}>{elem.btnTxt}</Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
-                );
-              })}
+                ))}
 
-            {item?.two?.map((subElem, index) => {
-              return (
-                <View
-                  key={index}
-                  style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: 10,
-                    borderWidth: .5,
-                    borderColor: '#252525',
-                    borderRadius: 10,
-                  }}>
-                  <Image
-                    source={subElem.images}
-                    style={{
-                      width: '100%',
-                      height: 200,
-                      resizeMode: 'cover',
-                    }}
-                  />
-                  <Text
-                    style={{
-                      color: '#252525',
-                      fontWeight: 'bold',
-                      fontSize: 20,
-                      marginBottom: 10,
-                    }}>
-                    {subElem.title}
-                  </Text>
-                  <TouchableOpacity style={{margin: 10}} onPress={()=>navigation.navigate('UdaipurDay')}>
-                    <Text
-                      style={{
-                        backgroundColor: '#00adef',
-                        color: '#fff',
-                        padding: 10,
-                        fontSize: 18,
-                        margin:15,
-                        fontWeight:'normal'
-                      }}>
-                      {subElem.btnText}
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-          </View>
-        );
-      }}
-    />
-  </View>
-)
-}
+                {item?.two?.map((subElem, index) => (
+                  <View key={index} style={styles.itemContainer}>
+                    <Image source={subElem.image} style={styles.image} />
+                    <View style={styles.itemContent}>
+                      <Text style={styles.title}>{subElem.title}</Text>
+                      <Text style={styles.text1}>{subElem.text1}</Text>
+                      <Text style={styles.text2}>{subElem.text2}</Text>
+                      <TouchableOpacity onPress={()=>{
+                        navigation.navigate(()=>{item.handlePress})
+                      }} style={styles.button}>
+                        <Text style={styles.buttonText}>{subElem.btnTxt}</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                ))}
 
-export default MultiSlider
+                {item?.three?.map((subElem2, index) => (
+                  <View key={index} style={styles.itemContainer}>
+                    <Image source={subElem2.image} style={styles.image} />
+                    <View style={styles.itemContent}>
+                      <Text style={styles.title}>{subElem2.title}</Text>
+                      <Text style={styles.text1}>{subElem2.text1}</Text>
+                      <Text style={styles.text2}>{subElem2.text2}</Text>
+                      <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>{subElem2.btnTxt}</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            );
+          }}
+        />
+      </ScrollView>
+
+
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemContainer: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: 10,
+    borderWidth: 0.5,
+    borderColor: '#252525',
+    borderRadius: 10,
+    height: responsiveHeight(30),
+    width: responsiveWidth(44),
+    overflow: 'hidden',
+    position: 'relative',
+    marginBottom: 30
+  },
+  itemContent: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 100,
+    resizeMode: 'cover',
+    borderRadius: 10,
+  },
+  title: {
+    color: '#252525',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginVertical: 10,
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 90
+  },
+  text1: {
+    color: '#252525',
+    fontWeight: 'bold',
+    fontSize: 14,
+    marginBottom: 10,
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 65
+  },
+  text2: {
+    color: '#252525',
+    fontWeight: 'bold',
+    fontSize: 14,
+    marginBottom: 10,
+    textAlign: 'center',
+    position: 'absolute',
+    lineHeight: 15,
+    letterSpacing: 0.5,
+    bottom: 45,
+  },
+  button: {
+    backgroundColor: '#00adef',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 150,
+    height: 40,
+    borderRadius: 10,
+    marginBottom: 50,
+    top: 42,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+
+
+
+export default MultiSlider;

@@ -68,14 +68,8 @@ const ContactForm = () => {
       }
       
 
-      if (!values.duration) {
-        errors.duration = 'Duration is required';
-      }
-
-      if (!values.adultCount) {
-        errors.adultCount = 'Number of adults is required';
-      }
-
+      
+      
       if (!values.childrenCount) {
         errors.childrenCount = 'Number of children is required';
       }
@@ -111,6 +105,7 @@ const ContactForm = () => {
           onBlur={formik.handleBlur('firstName')}
           value={formik.values.firstName}
           placeholder="Full Name"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.firstName ? (
           <Text
@@ -139,6 +134,7 @@ const ContactForm = () => {
           value={formik.values.email}
           placeholder="Email"
           keyboardType="email-address"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.email && <Text style={styles.errorText}>{formik.errors.email}</Text>}
 
@@ -149,6 +145,7 @@ const ContactForm = () => {
           value={formik.values.phoneNumber}
           placeholder="Phone Number"
           keyboardType="phone-pad"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.phoneNumber && <Text style={styles.errorText}>{formik.errors.phoneNumber}</Text>}
 
@@ -164,6 +161,7 @@ const ContactForm = () => {
           textStyle={styles.dropDownPickerText}
           containerStyle={styles.dropDownPickerContainer}
           onChangeValue={val => formik.setFieldValue('country', val)}
+          placeholderTextColor={'gray'}
         />
         {formik.errors.country && <Text style={styles.errorText}>{formik.errors.country}</Text>}
 
@@ -174,6 +172,7 @@ const ContactForm = () => {
           value={formik.values.travelDate}
           placeholder="Travel Date (YYYY-MM-DD)"
           keyboardType="numeric"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.travelDate && <Text style={styles.errorText}>{formik.errors.travelDate}</Text>}
 
@@ -183,6 +182,7 @@ const ContactForm = () => {
           onBlur={formik.handleBlur('duration')}
           value={formik.values.duration}
           placeholder="Duration of Travel eg 2N-3D"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.duration && <Text style={styles.errorText}>{formik.errors.duration}</Text>}
 
@@ -193,6 +193,7 @@ const ContactForm = () => {
           value={formik.values.adultCount}
           placeholder="Number of Adults"
           keyboardType="numeric"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.adultCount && <Text style={styles.errorText}>{formik.errors.adultCount}</Text>}
 
@@ -203,6 +204,7 @@ const ContactForm = () => {
           value={formik.values.childrenCount}
           placeholder="Number of Children"
           keyboardType="numeric"
+          placeholderTextColor={'gray'}
         />
         {formik.errors.childrenCount && <Text style={styles.errorText}>{formik.errors.childrenCount}</Text>}
 
@@ -213,6 +215,7 @@ const ContactForm = () => {
           value={formik.values.message}
           placeholder="Message (at least 50 characters)"
           multiline
+          placeholderTextColor={'gray'}
         />
         {formik.errors.message && <Text style={styles.errorText}>{formik.errors.message}</Text>}
 
@@ -270,7 +273,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   button: {
-    backgroundColor: '#213e9a',
+    backgroundColor: '#00adef',
     borderRadius: 8,
     padding: 12,
     marginTop: 20,

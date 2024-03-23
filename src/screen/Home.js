@@ -222,8 +222,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('2%'),
-    borderRadius: responsiveHeight(8),
-    borderRadius: responsiveWidth(8),
+    // borderRadius: ,
+    // borderRadius: responsiveWidth(8),
     overflow: 'hidden',
   },
   images: {
