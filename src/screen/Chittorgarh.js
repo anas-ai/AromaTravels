@@ -13,6 +13,7 @@ import FontIcon from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import { useNavigation } from '@react-navigation/native';
+import { responsiveFontSize, responsiveScreenHeight } from 'react-native-responsive-dimensions';
 
 const CarBooking = [
   {
@@ -116,8 +117,8 @@ const Chittorgarh = () => {
                 <ImageBackground
                   source={data.image}
                   style={{
-                    height: 300,
-                    width: 450,
+                    height: responsiveScreenHeight(40),
+                    width: responsiveScreenHeight(50),
                     resizeMode: 'contain',
                     marginTop: 40,
                   }}>
@@ -125,13 +126,13 @@ const Chittorgarh = () => {
                     style={{
                       backgroundColor: '#00adef',
                       width: 220,
-                      borderRadius: 50,
+                      borderRadius: 8,
                       color: '#fff',
                       textAlign: 'center',
-                      marginLeft: 0,
+                      marginLeft: 18,
                       justifyContent: 'center',
-                      marginTop: 20,
-                      fontSize: 18,
+                      marginTop:0 ,
+                      fontSize:responsiveFontSize(1.9),
                       padding: 8,
                       fontWeight: '500',
                     }}>

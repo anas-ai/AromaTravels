@@ -151,9 +151,9 @@ const Home = () => {
         </View>
 
         <MultiSlider />
-        {/* <Welcome /> */}
-        <Contact />
         <CarSlider />
+        <Welcome />
+        <Contact />
         {/* <Footer /> */}
       </View>
     </ScrollView>
@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('3%'),
+    marginTop:2
   },
   text: {
     color: '#213e9a',

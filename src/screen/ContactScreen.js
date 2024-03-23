@@ -1,18 +1,16 @@
 import React from 'react';
-import { View, Text, ScrollView, ImageBackground, StyleSheet, TextInput, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, ScrollView, ImageBackground, StyleSheet, TouchableOpacity, Linking, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import Footer from '../components/Footer';
-import { black } from 'react-native-paper/lib/typescript/styles/colors';
 import Contact from '../components/Contact';
+
+const { width } = Dimensions.get('window');
 
 const links = (url) => {
   Linking.openURL(url)
 }
-
 
 const ContactScreen = () => {
   return (
@@ -27,83 +25,31 @@ const ContactScreen = () => {
       <View style={styles.contactInfoContainer}>
         <Text style={styles.contactInfoTitle}>Contact Info</Text>
         <AntDesign name='contacts' style={styles.phoneIcon} />
-        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#213e9a' }}>_________</Text>
+        <Text style={styles.divider}></Text>
       </View>
 
       <View style={styles.infoContainer}>
         <View style={styles.infoRow}>
-          <Ionicons name='person' style={{
-            marginRight: 20,
-            color: '#213e9a',
-            fontSize: 25,
-            right: 80
-          }} />
-          <Text style={{
-            color: '#252525',
-            fontSize: 18,
-            right: 80
-          }}>Travel Aroma</Text>
+          <Ionicons name='person' style={styles.infoIcon} />
+          <Text style={styles.infoText}>Travel Aroma</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <Entypo name='location-pin' style={{
-            marginRight: 20,
-            color: '#213e9a',
-            fontSize: 30,
-            left: 18
-          }} />
-          <Text style={{
-            color: '#252525',
-            fontSize: 18,
-            left: 20
-          }}>B-143, Amar Nagar, Sajjan Garh Road, Udaipur,(Raj.) 313001, INDIA</Text>
+          <Entypo name='location-pin' style={styles.infoIcon} />
+          <Text style={styles.infoText}>B-143, Amar Nagar, Sajjan Garh Road, Udaipur,(Raj.) 313001, INDIA</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <Ionicons name='mail' style={{
-            marginRight: 20,
-            color: '#213e9a',
-            fontSize: 25,
-            right: 22
-          }} />
-          <Text style={{
-            color: '#252525',
-            fontSize: 18,
-            right: 20
-          }}>travelaroma2@gmail.com || info@travelaroma.in</Text>
+          <Ionicons name='mail' style={styles.infoIcon} />
+          <Text style={styles.infoText}>travelaroma2@gmail.com || info@travelaroma.in</Text>
         </View>
 
         <View style={styles.infoRow}>
-          <Ionicons name='call' style={{
-            marginRight: 20,
-            color: '#213e9a',
-            fontSize: 25,
-            left: 10
-          }} />
-          <Text style={{
-            color: '#252525',
-            fontSize: 18,
-            left:10 
-          }}>+91 8290187159 ; +91 9664304937</Text>
+          <Ionicons name='call' style={styles.infoIcon} />
+          <Text style={styles.infoText}>+91 8290187159 ; +91 9664304937</Text>
         </View>
       </View>
-        
-      {/* <View style={styles.formContainer}>
-        <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
-        <TextInput style={styles.input} placeholder="First Name" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Your Email" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Your Phone Number" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Select Country" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Travel Date" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Duration of Travel e.g., 2N-3D" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="People Traveling Adult" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="People Traveling Children" placeholderTextColor={'black'} />
-        <TextInput style={styles.input} placeholder="Your Message" multiline placeholderTextColor={'black'} />
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Send Message</Text>
-        </TouchableOpacity>
-      </View> */}
       <Contact/>
 
       <View style={styles.socialContainer}>
@@ -123,12 +69,10 @@ const ContactScreen = () => {
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => links('https://www.travelaroma.in/contact.html#')}>
-
             <Ionicons name='logo-google' style={styles.socialIcon} />
           </TouchableOpacity>
         </View>
       </View>
-      {/* <Footer/> */}
     </ScrollView>
   );
 };
@@ -140,7 +84,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     width: '100%',
-    height: 120,
+    height: width * 0.4,
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
@@ -163,14 +107,19 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   phoneIcon: {
-    fontSize: 50,
+    fontSize: width * 0.12,
     color: '#213e9a',
-    marginTop: 8,
+    marginBottom:5
+  },
+  divider: {
+    width: '80%',
+    height: 2,
+    backgroundColor: '#213e9a',
+    marginBottom: 10,
   },
   infoContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
     marginTop: 20,
     padding: 20,
     borderRadius: 10,
@@ -180,14 +129,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
-    position: 'relative'
   },
   infoIcon: {
     marginRight: 20,
     color: '#213e9a',
-    fontSize: 40,
+    fontSize: width * 0.07,
   },
   infoText: {
+    flex: 1,
     color: '#252525',
     fontSize: 18,
   },
@@ -196,7 +145,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 20,
     padding: 20,
-
     borderRadius: 10,
     marginHorizontal: 20,
   },
@@ -208,54 +156,8 @@ const styles = StyleSheet.create({
   },
   socialIcon: {
     color: '#213e9a',
-    fontSize: 25,
+    fontSize: width * 0.08,
     margin: 8,
-  },
-  imageContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  imageWrapper: {
-    width: '50%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image: {
-    height: 155,
-    width: '100%',
-  },
-  formContainer: {
-    alignItems: 'center',
-    margin: 20,
-  },
-  formHeading: {
-    color: '#213e9a',
-    fontSize: 27,
-    fontWeight: 'normal',
-    marginVertical: 20,
-  },
-  input: {
-    height: 40,
-    width: '100%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 12,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    color: 'black'
-  },
-  button: {
-    backgroundColor: '#000',
-    borderRadius: 8,
-    padding: 12,
-    marginTop: 20,
-    width: '100%',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
   },
 });
 

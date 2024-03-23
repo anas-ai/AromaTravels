@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 const Welcome = () => {
   
@@ -15,24 +16,24 @@ const Welcome = () => {
       </View>
 
       <View style={styles.contentContainer}>
-        <Text style={styles.heading}>WELCOME TO TRAVEL AROMA</Text>
+        <Text style={styles.heading}>Welcome to Travel Aroma</Text>
         <Text style={styles.description}>
           Let's roam around the world!!!
         </Text>
         <Text style={styles.description}>
-          The Travel Aroma provided by us offers some of the loveliest destinations and some outstanding tour packages.
+          Travel Aroma offers some of the loveliest destinations and outstanding tour packages.
         </Text>
         <Text style={styles.description}>
-          You can choose a package or design one as per your requirements and desires.
+          Choose a package or design one as per your requirements and desires.
         </Text>
         <Text style={styles.description}>
-          We promise you that traveling with us will be an experience of a lifetime where each place that you visit will be beyond compare.
+          We promise you that traveling with us will be an experience of a lifetime where each place you visit will be beyond compare.
         </Text>
         <Text style={styles.description}>
-          Culture, heritage, wildlife, adventure, pilgrimage, nature, and other tours will be covered in our tour package which will excite you beyond imagination.
+          Culture, heritage, wildlife, adventure, pilgrimage, nature, and other tours will be covered in our packages, exciting you beyond imagination.
         </Text>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>View More This Sightseeing!</Text>
+          <Text style={styles.buttonText}>View More Sightseeing!</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -42,47 +43,50 @@ const Welcome = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f8f8', // Add a light background color
+    backgroundColor: '#f8f8f8',
   },
   imageContainer: {
-    // marginBottom: 20,
+    marginBottom: RFValue(20),
   },
   image: {
-    borderWidth: 5,
-    borderColor: '#00adef',
-    height: 380,
+    borderRadius: RFValue(10),
+    height: RFPercentage(40),
     width: '100%',
-    resizeMode: 'cover',
+    resizeMode:'stretch',
   },
   contentContainer: {
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 22,
-    paddingVertical: 16,
+    backgroundColor: '#212121',
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(16),
+    borderTopLeftRadius: RFValue(30),
+    borderTopRightRadius: RFValue(30),
+    elevation: 5,
+    marginTop: RFValue(-30),
   },
   heading: {
     color: 'white',
-    fontSize: 24,
+    fontSize: RFValue(24),
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: RFValue(16),
+    textAlign: 'center',
   },
   description: {
     color: 'white',
+    marginBottom: RFValue(12),
+    lineHeight: RFValue(22),
     textAlign: 'justify',
-    marginBottom: 12,
-    lineHeight: 22,
   },
   button: {
     backgroundColor: '#00adef',
-    borderRadius: 8,
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    marginTop: 16,
+    borderRadius: RFValue(8),
+    paddingVertical: RFValue(14),
+    paddingHorizontal: RFValue(24),
+    marginTop: RFValue(20),
+    alignSelf: 'center',
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontWeight: 'bold',
   },
 });
