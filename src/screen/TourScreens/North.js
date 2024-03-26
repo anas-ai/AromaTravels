@@ -18,6 +18,7 @@ import {
   responsiveHeight,
   responsiveFontSize,
   responsiveScreenWidth,
+  responsiveScreenHeight,
 } from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
 
@@ -86,15 +87,15 @@ const North = () => {
                 <Text
                   style={{
                     backgroundColor: '#00adef',
-                    width: 220,
-                    borderRadius: 50,
+                    width: responsiveScreenWidth(35),
+                    borderRadius: 10,
                     color: '#fff',
                     textAlign: 'center',
-                    marginLeft: 2,
+                    marginLeft: responsiveScreenWidth(2),
                     justifyContent: 'center',
-                    marginBottom: 8,
-                    fontSize: 18,
-                    padding: 8,
+                    marginBottom: 15,
+                    fontSize: 15,
+                    padding: 4,
                     fontWeight: '500',
                   }}>
                   {data.label}
@@ -104,7 +105,7 @@ const North = () => {
                     color: 'gray',
                     paddingHorizontal: 20,
                     fontSize: responsiveFontSize(1.5),
-                    lineHeight: responsiveHeight(2),
+                    // lineHeight: responsiveHeight(2),
                     marginBottom: 15,
                     marginTop: 10,
                     letterSpacing: 0.1,
@@ -159,10 +160,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   description: {
-    lineHeight: 35,
-    textAlign: 'justify',
-    color: '#999',
-    fontWeight: 'bold',
+    
+      lineHeight: responsiveScreenHeight(3),
+      width:responsiveScreenWidth(90),
+      textAlign: 'justify',
+      color: '#999',
+      fontWeight: 'bold'
+    
   },
 });
 

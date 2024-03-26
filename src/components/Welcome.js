@@ -32,9 +32,9 @@ const Welcome = () => {
         <Text style={styles.description}>
           Culture, heritage, wildlife, adventure, pilgrimage, nature, and other tours will be covered in our packages, exciting you beyond imagination.
         </Text>
-        <TouchableOpacity style={styles.button}>
+        {/* <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>View More Sightseeing!</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   );
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginBottom: RFValue(20),
   },
   image: {
-    borderRadius: RFValue(10),
+    // borderRadius: RFValue(5),
     height: RFPercentage(40),
     width: '100%',
     resizeMode:'stretch',
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#212121',
     paddingHorizontal: RFValue(20),
     paddingVertical: RFValue(16),
-    borderTopLeftRadius: RFValue(30),
-    borderTopRightRadius: RFValue(30),
+    // borderTopLeftRadius: RFValue(30),
+    // borderTopRightRadius: RFValue(30),
     elevation: 5,
     marginTop: RFValue(-30),
   },

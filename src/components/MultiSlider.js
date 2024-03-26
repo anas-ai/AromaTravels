@@ -586,7 +586,7 @@ const MultiSlider = () => {
             height: responsiveHeight(0.8),
             width: responsiveHeight(0.8),
             borderRadius: responsiveHeight(0.4),
-            marginTop: responsiveHeight(1),
+            marginVertical: responsiveHeight(1),
           }}
           autoplay={true}
           autoplayInterval={3000}
@@ -609,7 +609,7 @@ const MultiSlider = () => {
                       <Text style={styles.title}>{elem.title}</Text>
                       <Text style={styles.text}>{elem.text1}</Text>
                       <Text style={styles.text}>{elem.text2}</Text>
-                      <TouchableOpacity
+                      <TouchableOpacity activeOpacity={.8}
                         onPress={() => handlePress(elem.btnlink)}
                         style={styles.button}>
                         <Text style={styles.buttonText}>{elem.btnTxt}</Text>
@@ -671,7 +671,7 @@ const styles = StyleSheet.create({
   itemContainer2:{
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: responsiveHeight(1),
+    marginVertical: responsiveHeight(4),
     borderWidth: 0.5,
     borderColor: '#252525',
     borderRadius: responsiveHeight(2),

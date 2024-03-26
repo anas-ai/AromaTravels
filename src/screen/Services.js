@@ -11,9 +11,14 @@ import React from 'react';
 import FontIcon from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
-import { useNavigation } from '@react-navigation/native';
-
-
+import {useNavigation} from '@react-navigation/native';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
 const CarBooking = [
   {
@@ -71,7 +76,7 @@ const Services = () => {
   return (
     <ScrollView>
       <View style={{flex: 0, alignItems: 'center', justifyContent: 'center'}}>
-        <ImageBackground 
+        <ImageBackground
           source={require('../images/aboutImg/about-banner.jpg')}
           style={{width: '100%', height: 120, resizeMode: 'contain'}}>
           <Text
@@ -93,11 +98,17 @@ const Services = () => {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            marginVertical: -15,
+            marginVertical: responsiveScreenHeight(0.1),
             flexDirection: 'row',
           }}>
           <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                marginHorizontal: responsiveScreenWidth(0.1),
+              }}>
+              _
+            </Text>
           </View>
           <FontIcon name="customerservice" color={'#213e9a'} size={25} />
           <View>
@@ -125,34 +136,37 @@ const Services = () => {
               <View
                 key={index}
                 style={{alignItems: 'center', justifyContent: 'center'}}>
-                <ImageBackground 
+                <ImageBackground
                   source={data.image}
                   style={{
-                    height: 300,
-                    width: 450,
+                    height: responsiveHeight(25),
+                    width: responsiveHeight(46),
                     resizeMode: 'contain',
-                    marginTop: 40,
+                    marginTop: 15,
                   }}>
                   <Text
                     style={{
-                      backgroundColor: '#00adef',
-                      width: 220,
-                      borderRadius: 50,
                       color: '#fff',
+                      fontWeight: 'bold',
+                      position: 'absolute',
+                      top: responsiveWidth(0.1),
+                      left: responsiveWidth(10),
+                      fontSize: responsiveFontSize(1.5),
+                      padding: responsiveWidth(1),
+                      textShadowColor: '#252525',
+                      textShadowOffset: {width: 3, height: 2},
+                      textShadowRadius: 5,
                       textAlign: 'center',
-                      marginLeft: 0,
-                      justifyContent: 'center',
-                      marginTop: 20,
-                      fontSize: 18,
-                      padding: 8,
-                      fontWeight: '500',
+                      marginLeft: responsiveFontSize(-5),
+                      // borderRadius: responsiveWidth(10),
+                      backgroundColor: '#00adef',
                     }}>
                     {data.label}
                   </Text>
                 </ImageBackground>
                 <View>
                   <Text
-                    style={{textAlign: 'justify', margin: 10, color: 'gray'}}>
+                    style={{textAlign: 'justify', margin: 10, color: 'gray',letterSpacing:.2}}>
                     {data.text}
                   </Text>
                 </View>
@@ -175,16 +189,16 @@ const Services = () => {
             );
           })}
 
-          <View style={{marginTop:20}}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Contact')}>
+          <View style={{marginTop: 20}}>
+            <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
               <Text
                 style={{
                   padding: 10,
                   backgroundColor: '#00adef',
                   color: '#fff',
-                  fontWeight:'normal',
+                  fontWeight: 'normal',
                   // width:100
-                  fontSize:15
+                  fontSize: 15,
                 }}>
                 Yes, I Want To Book This Tour!
               </Text>
@@ -192,8 +206,8 @@ const Services = () => {
           </View>
         </View>
       </View>
-        {/* <Contact/> */}
-      <Footer/>
+      {/* <Contact/> */}
+      <Footer />
     </ScrollView>
   );
 };
@@ -205,11 +219,11 @@ const styles = StyleSheet.create({
   textContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 30,
+    marginVertical: 5,
   },
   text: {
     color: '#213e9a',
-    fontSize: 30,
+    fontSize: responsiveFontSize(4),
     fontWeight: '500',
   },
   descriptionContainer: {
@@ -219,11 +233,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   description: {
-    lineHeight: 35,
+    lineHeight: responsiveScreenHeight(3),
+    letterSpacing:responsiveScreenHeight(0.01),
+    width: responsiveScreenWidth(90),
     textAlign: 'justify',
     color: '#999',
     fontWeight: 'bold',
+    fontSize: responsiveFontSize(1.6), // 
   },
 });
 
-export default Services;
+export default Services;

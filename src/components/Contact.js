@@ -70,15 +70,15 @@ const ContactForm = () => {
 
       
       
-      if (!values.childrenCount) {
-        errors.childrenCount = 'Number of children is required';
-      }
+      // if (!values.childrenCount) {
+      //   errors.childrenCount = 'Number of children is required';
+      // }
 
-      if (!values.message) {
-        errors.message = 'Message is required';
-      } else if (values.message.length < 50) {
-        errors.message = 'Message must be at least 50 characters';
-      }
+      // if (!values.message) {
+      //   errors.message = 'Message is required';
+      // } else if (values.message.length < 50) {
+      //   errors.message = 'Message must be at least 50 characters';
+      // }
       
       return errors;
     },

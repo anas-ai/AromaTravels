@@ -5,13 +5,18 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import React from 'react';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { responsiveHeight, responsiveScreenFontSize, responsiveScreenWidth } from 'react-native-responsive-dimensions';
 
+const link = (url)=>{
+  Linking.openURL(url)
+}
 
 const About = () => {
   return (
@@ -34,7 +39,7 @@ const About = () => {
         <Contact />
         <View
           style={{
-            height: 470,
+            height: responsiveHeight(30),
             width: '100%',
             backgroundColor: '#00adef',
             justifyContent: 'center',
@@ -42,11 +47,12 @@ const About = () => {
           }}>
           <Image
             source={require('../images/aboutImg/tripadvisor-banner.png')}
+            style={{height:responsiveHeight(10),width:responsiveHeight(10)}}
           />
           <Text
             style={{
               color: 'white',
-              fontSize: 28,
+              fontSize: responsiveScreenFontSize(2.2),
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -55,13 +61,13 @@ const About = () => {
           <Text
             style={{
               color: 'white',
-              fontSize: 28,
+              fontSize: responsiveScreenFontSize(2.2),
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
             TRAVEL SITE
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>link('https://www.tripadvisor.in/UserReviewEdit-g297672-d19947403-Travel_Aroma-Udaipur_Udaipur_District_Rajasthan.html')}>
             <Text
               style={{
                 color: '#fff',

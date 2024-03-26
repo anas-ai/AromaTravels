@@ -18,6 +18,8 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import {
   responsiveFontSize,
   responsiveHeight,
+  responsiveScreenHeight,
+  responsiveScreenWidth,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
@@ -96,7 +98,7 @@ const Home = () => {
           <FontIcon
             name="camera-retro"
             color={'#213e9a'}
-            size={RFPercentage(4)}
+            size={RFPercentage(3.2)}
           />
           <View style={styles.line} />
         </View>
@@ -122,7 +124,7 @@ const Home = () => {
           ))}
         </ScrollView>
 
-        <TouchableOpacity
+        <TouchableOpacity activeOpacity={.8}
           style={styles.viewMoreButton}
           onPress={() => navigation.navigate('UdaipurDay')}>
           <Text style={styles.viewMoreButtonText}>
@@ -139,13 +141,13 @@ const Home = () => {
           <FontIcon
             name="camera-retro"
             color={'#213e9a'}
-            size={RFPercentage(4)}
+            size={RFPercentage(3.2)}
           />
           <View style={styles.line} />
         </View>
 
         <View style={styles.descriptionContainer}>
-          <Text style={styles.description}>
+          <Text style={styles.Tourdescription}>
             Why do 96% of our customers keep coming back to us?
           </Text>
         </View>
@@ -169,11 +171,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: heightPercentageToDP('3%'),
-    marginTop:2
+    marginTop: 10,
   },
   text: {
     color: '#213e9a',
-    fontSize: RFPercentage(4),
+    fontSize: RFPercentage(3.4),
     fontWeight: '500',
   },
   lineContainer: {
@@ -196,10 +198,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: widthPercentageToDP('5%'),
   },
   description: {
-    lineHeight: RFPercentage(4.5),
+    lineHeight: responsiveScreenHeight(3),
+    letterSpacing:responsiveScreenHeight(0.01),
+    width: responsiveScreenWidth(90),
     textAlign: 'justify',
     color: '#999',
     fontWeight: 'bold',
+    fontSize: responsiveFontSize(1.6), // Adjust font size as needed
   },
   swiper: {
     height: heightPercentageToDP('30%'),
@@ -222,25 +227,30 @@ const styles = StyleSheet.create({
   imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: heightPercentageToDP('2%'),
+    marginVertical: heightPercentageToDP('5%'),
     // borderRadius: ,
     // borderRadius: responsiveWidth(8),
     overflow: 'hidden',
   },
   images: {
-    height: heightPercentageToDP('30%'),
-    width: heightPercentageToDP('35%'),
+    height: heightPercentageToDP('20%'),
+    width: heightPercentageToDP('30%'),
     resizeMode: 'contain',
     margin: responsiveWidth(1),
     position: 'relative',
   },
+
   viewMoreButton: {
     backgroundColor: '#00adef',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: heightPercentageToDP('3%'),
-    padding: heightPercentageToDP('2%'),
-    borderRadius: 10,
+    height:responsiveScreenHeight(5),
+    width:responsiveScreenWidth(58),
+    marginLeft:responsiveHeight(10),
+    borderRadius:10,
+    marginBottom:20,
+    marginTop:-20
+    
   },
   viewMoreButtonText: {
     fontSize: RFPercentage(2),
@@ -251,15 +261,24 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     position: 'absolute',
-    top: responsiveWidth(55),
-    left: responsiveWidth(13),
-    fontSize: responsiveFontSize(2.5),
+    top: responsiveWidth(0.1),
+    left: responsiveWidth(10),
+    fontSize: responsiveFontSize(1.5),
+    padding: responsiveWidth(1),
     textShadowColor: '#252525',
     textShadowOffset: {width: 3, height: 2},
     textShadowRadius: 5,
-    textAlign: 'justify',
+    textAlign: 'center',
     marginLeft: responsiveFontSize(-5),
-    borderRadius: responsiveWidth(10),
+    // borderRadius: responsiveWidth(10),
+    backgroundColor: '#00adef',
+  },
+  Tourdescription: {
+    width: responsiveScreenWidth(94),
+    textAlign: 'justify',
+    color: '#999',
+    fontWeight: 'bold',
+    fontSize: responsiveFontSize(1.8),
   },
 });
 

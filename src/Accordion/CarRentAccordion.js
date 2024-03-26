@@ -16,7 +16,7 @@ const CarRentAccordion = () => {
           <ListItem.Content>
             <ListItem.Title
               style={{
-                fontSize: RFPercentage(1.7),
+                fontSize: RFPercentage(1.8),
                 color: 'gray',
                 fontWeight: '700',
                 marginLeft: responsiveScreenWidth(0.5)

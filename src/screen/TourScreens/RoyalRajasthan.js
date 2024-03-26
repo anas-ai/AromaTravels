@@ -92,15 +92,15 @@ const RoyalRajasthan = () => {
                 <Text
                   style={{
                     backgroundColor: '#00adef',
-                    width: 220,
-                    borderRadius: 50,
+                    width: responsiveScreenWidth(35),
+                    borderRadius: 10,
                     color: '#fff',
                     textAlign: 'center',
-                    marginLeft: 2,
+                    marginLeft: responsiveScreenWidth(2),
                     justifyContent: 'center',
-                    marginTop: 2,
-                    fontSize: 18,
-                    padding: 8,
+                    marginBottom: 15,
+                    fontSize: 15,
+                    padding: 4,
                     fontWeight: '500',
                   }}>
                   {data.label}
@@ -110,11 +110,11 @@ const RoyalRajasthan = () => {
                     textAlign: 'justify',
                     color: 'gray',
                     paddingHorizontal: 20,
-                    fontSize: responsiveFontSize(1.8),
-                    lineHeight: responsiveHeight(2.2),
+                    fontSize: responsiveFontSize(1.5),
+                    // lineHeight: responsiveHeight(2.2),
                     marginBottom: 15,
                     marginTop: 10,
-                    letterSpacing: 0.1,
+                    letterSpacing: 0.2,
                   }}>
                   {data.text}
                 </Text>

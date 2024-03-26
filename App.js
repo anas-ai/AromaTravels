@@ -372,11 +372,16 @@ const DrawerNavigator = () => (
       backgroundColor: '#fff',
       width: widthPercentageToDP('100%'),
     }}
+    screenOptions={{
+      headerTintColor: '#000', 
+    }}
     drawerContent={props => <CustomDrawerContent {...props} />}>
     <Drawer.Screen
       name="Home"
       component={TabNavigator}
-      options={{headerTitle: () => <CommonHeaderTitle />}}
+      options={{headerTitle: () => <CommonHeaderTitle />,
+      
+    }}
     />
     <Drawer.Screen
       name="About"
@@ -405,7 +410,7 @@ const DrawerNavigator = () => (
 const App = () => {
   return (
     <NavigationContainer>
-      <Header />
+      <Header/>
       <Stack.Navigator>
         <Stack.Screen
           name="DrawerNavigator"

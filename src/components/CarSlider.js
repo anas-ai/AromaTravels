@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image, ScrollView,StyleSheet} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-import { responsiveHeight,responsiveWidth,responsiveFontSize } from 'react-native-responsive-dimensions';
+import { responsiveHeight,responsiveWidth,responsiveFontSize, responsiveScreenWidth } from 'react-native-responsive-dimensions';
 import { useNavigation } from '@react-navigation/native';
 
 const CarSliderImg = [
@@ -124,16 +124,16 @@ const CarSlider = () => {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
+        marginTop: -10,
       }}>
       <View>
         <View
           style={{
             alignItems: 'center',
             justifyContent: 'center',
-            marginVertical: 30,
+            marginVertical: 15,
           }}>
-          <Text style={{color: '#213e9a', fontSize: 30, fontWeight: '500'}}>
+          <Text style={{color: '#213e9a', fontSize: responsiveFontSize(3.5), fontWeight: '600'}}>
             Car Services in Udaipur
           </Text>
         </View>
@@ -147,9 +147,9 @@ const CarSlider = () => {
             margin: 10,
           }}>
           <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 5}}>___</Text>
+            <Text style={{fontWeight: 'bold', marginBottom: 10}}>___</Text>
           </View>
-          <FontIcon name="car" color={'#213e9a'} size={25} />
+          <FontIcon name="car" color={'#213e9a'} size={20} style={{marginTop:responsiveWidth(1)}}/>
           <View>
             <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
               ___
@@ -166,10 +166,11 @@ const CarSlider = () => {
           }}>
           <Text
             style={{
-              lineHeight: 15,
+              width: responsiveScreenWidth(94),
               textAlign: 'justify',
               color: '#999',
-              fontWeight: 500,
+              fontWeight: 'bold',
+              fontSize: responsiveFontSize(1.8),
             }}>
             Why do 96% of our customer keep coming back to us?
           </Text>
@@ -188,7 +189,7 @@ const CarSlider = () => {
           height: 10,
           width: 10,
           borderRadius: 50,
-          marginTop: 10,
+          marginVertical: -4,
         }}
         autoplay={true}
         autoplayInterval={3000}
@@ -211,7 +212,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{elem.title}</Text>
                   <Text style={styles.text}>{elem.text1}</Text>
                   <Text style={styles.text2}>{elem.text2}</Text>
-                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
+                  <TouchableOpacity activeOpacity={.8} style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{elem.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>
@@ -225,7 +226,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{subElem.title}</Text>
                   <Text style={styles.text}>{subElem.text1}</Text>
                   <Text style={styles.text2}>{subElem.text2}</Text>
-                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
+                  <TouchableOpacity activeOpacity={.8} style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{subElem.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>
@@ -239,7 +240,7 @@ const CarSlider = () => {
                   <Text style={styles.title}>{subElem2.title}</Text>
                   <Text style={styles.text}>{subElem2.text1}</Text>
                   <Text style={styles.text2}>{subElem2.text2}</Text>
-                  <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
+                  <TouchableOpacity activeOpacity={.8} style={styles.button} onPress={()=>navigation.navigate('CarRent')}>
                     <Text style={styles.buttonText}>{subElem2.btnTxt}</Text>
                   </TouchableOpacity>
                 </View>

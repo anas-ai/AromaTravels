@@ -14,7 +14,7 @@ import FontIcon from 'react-native-vector-icons/AntDesign';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import { useNavigation } from '@react-navigation/native';
-import { responsiveFontSize, responsiveScreenHeight } from 'react-native-responsive-dimensions';
+import { responsiveFontSize, responsiveScreenHeight, responsiveScreenWidth, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const width = Dimensions.get('window');
 const CarBooking = [
@@ -115,35 +115,38 @@ const UdaipurDay = () => {
             return (
               <View
                 key={index}
-                style={{alignItems: 'center', justifyContent: 'center'}}>
+                style={{alignItems: 'center', justifyContent: 'center',margin:responsiveScreenHeight(1.5)}}>
                 <ImageBackground
                   source={data.image}
                   style={{
-                    height: responsiveScreenHeight(40),
-                    width: responsiveScreenHeight(50),
+                    height: responsiveScreenHeight(25),
+                    width: responsiveScreenHeight(45),
                     resizeMode: 'contain',
                     marginTop: 40,
                   }}>
                   <Text
                     style={{
-                      backgroundColor: '#00adef',
-                      width: 220,
-                      borderRadius: 8,
                       color: '#fff',
+                      fontWeight: 'bold',
+                      position: 'absolute',
+                      top: responsiveWidth(0.1),
+                      left: responsiveWidth(10),
+                      fontSize: responsiveFontSize(1.8),
+                      padding: responsiveWidth(1),
+                      textShadowColor: '#252525',
+                      textShadowOffset: {width: 3, height: 2},
+                      textShadowRadius: 5,
                       textAlign: 'center',
-                      marginLeft: 18,
-                      justifyContent: 'center',
-                      marginTop:0 ,
-                      fontSize:responsiveFontSize(1.9),
-                      padding: 8,
-                      fontWeight: '500',
+                      marginLeft: responsiveFontSize(-5),
+                      // borderRadius: responsiveWidth(10),
+                      backgroundColor: '#00adef',
                     }}>
                     {data.label}
                   </Text>
                 </ImageBackground>
                 <View>
                   <Text
-                    style={{textAlign: 'justify', margin: 10, color: 'gray',}}>
+                    style={{textAlign: 'justify', margin: 10, color: 'gray',letterSpacing:.2}}>
                     {data.text}
                   </Text>
                 </View>
@@ -212,10 +215,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   description: {
-    lineHeight: 35,
+    lineHeight: responsiveScreenHeight(3),
+    letterSpacing:responsiveScreenHeight(0.01),
+    width: responsiveScreenWidth(90),
     textAlign: 'justify',
     color: '#999',
     fontWeight: 'bold',
+    fontSize: responsiveFontSize(1.6), // 
   },
 });
 
