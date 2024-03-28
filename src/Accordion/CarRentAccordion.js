@@ -16,8 +16,8 @@ const CarRentAccordion = () => {
           <ListItem.Content>
             <ListItem.Title
               style={{
-                fontSize: RFPercentage(1.8),
-                color: 'gray',
+                fontSize: responsiveFontSize(1.7),
+                color: '#707070',
                 fontWeight: '700',
                 marginLeft: responsiveScreenWidth(0.5)
               }}>
@@ -32,7 +32,7 @@ const CarRentAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Economy')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%' }}>Economy Cars</ListItem.Title>
+              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%', marginVertical:responsiveScreenWidth(-4), }}>Economy Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -40,21 +40,21 @@ const CarRentAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('MidSize')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%' }}>Mid-Size Cars</ListItem.Title>
+              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%' ,marginVertical:responsiveScreenWidth(-4)}}>Mid-Size Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Luxury')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%' }}>Luxury Cars</ListItem.Title>
+              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%',marginVertical:responsiveScreenWidth(-4) }}>Luxury Cars</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('DeluxeCar')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%' }}>Deluxe Coach </ListItem.Title>
+              <ListItem.Title style={{ fontSize: responsiveFontSize(1.5), marginLeft: '5%',marginVertical:responsiveScreenWidth(-4) }}>Deluxe Coach </ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>

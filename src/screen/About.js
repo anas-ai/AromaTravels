@@ -39,7 +39,7 @@ const About = () => {
         <Contact />
         <View
           style={{
-            height: responsiveHeight(30),
+            height: responsiveHeight(23),
             width: '100%',
             backgroundColor: '#00adef',
             justifyContent: 'center',
@@ -52,7 +52,7 @@ const About = () => {
           <Text
             style={{
               color: 'white',
-              fontSize: responsiveScreenFontSize(2.2),
+              fontSize: responsiveScreenFontSize(2),
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -61,7 +61,7 @@ const About = () => {
           <Text
             style={{
               color: 'white',
-              fontSize: responsiveScreenFontSize(2.2),
+              fontSize: responsiveScreenFontSize(2),
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -76,7 +76,7 @@ const About = () => {
                 borderColor: 'white',
                 padding: 12,
                 marginTop: 10,
-                paddingHorizontal: 50,
+                paddingHorizontal: 20,
                 width: '100%',
                 fontWeight: 'bold',
               }}>

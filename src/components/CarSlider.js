@@ -147,11 +147,11 @@ const CarSlider = () => {
             margin: 10,
           }}>
           <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 10}}>___</Text>
+            <Text style={{fontWeight: 'bold', marginBottom: 8, color:'#213e9a'}}>___</Text>
           </View>
           <FontIcon name="car" color={'#213e9a'} size={20} style={{marginTop:responsiveWidth(1)}}/>
           <View>
-            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
+            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>
               ___
             </Text>
           </View>

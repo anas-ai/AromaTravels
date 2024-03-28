@@ -44,11 +44,11 @@ const CarRent = () => {
             flexDirection: 'row',
           }}>
           <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
+            <Text style={{fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>_</Text>
           </View>
           <FontIcon name="car-sport" color={'#213e9a'} size={25} />
           <View>
-            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
+            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>
               _
             </Text>
           </View>

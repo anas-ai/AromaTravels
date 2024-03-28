@@ -59,6 +59,8 @@ import CarRentAccordion from './src/Accordion/CarRentAccordion';
 
 
 
+
+
 const PhoneCall =()=>{
   Linking.openURL(`tel:+919664304937`)
 }
@@ -71,6 +73,7 @@ const PhoneCall =()=>{
 
 const CommonHeaderTitle = () => (
   <View style={{marginLeft: widthPercentageToDP('10%')}}>
+    
     <Image
       source={require('../aromatravels/src/images/website-logo.jpg')}
       style={{
@@ -89,7 +92,7 @@ const CustomDrawerContent = props => {
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity onPress={() =>navigation.navigate('Home')}>
           <Image
             source={require('../aromatravels/src/images/website-logo.jpg')}
             style={styles.headerImage}

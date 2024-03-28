@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { useFormik } from 'formik';
 import DropDownPicker from 'react-native-dropdown-picker';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const ContactForm = () => {
   const formik = useFormik({
@@ -97,7 +98,7 @@ const ContactForm = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.formContainer}>
-        <Text style={styles.formHeading}>Travel Aroma Enquiry Form</Text>
+        <Text style={styles.formHeading}>Travel Aroma Enquiry</Text>
 
         <TextInput
           style={styles.input}
@@ -173,6 +174,7 @@ const ContactForm = () => {
           placeholder="Travel Date (YYYY-MM-DD)"
           keyboardType="numeric"
           placeholderTextColor={'gray'}
+          
         />
         {formik.errors.travelDate && <Text style={styles.errorText}>{formik.errors.travelDate}</Text>}
 
@@ -238,7 +240,7 @@ const styles = StyleSheet.create({
   },
   formHeading: {
     color: '#213e9a',
-    fontSize: 27,
+    fontSize: responsiveFontSize(3.5),
     fontWeight: 'bold',
     marginBottom: 20,
   },

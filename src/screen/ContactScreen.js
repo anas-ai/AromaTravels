@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Contact from '../components/Contact';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const { width } = Dimensions.get('window');
 
@@ -46,7 +47,7 @@ const ContactScreen = () => {
 
         <View style={styles.infoRow}>
           <Ionicons name='call' style={styles.infoIcon} />
-          <Text style={styles.infoText}>+91 8290187159 ; +91 9664304937</Text>
+          <Text style={styles.infoText}>+91 8290187159 , +91 9664304937</Text>
         </View>
       </View>
 
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
   infoText: {
     flex: 1,
     color: '#252525',
-    fontSize: 18,
+    fontSize:responsiveFontSize(2),
   },
   socialContainer: {
     alignItems: 'center',

@@ -512,7 +512,7 @@ const CarSliderImg = [
       {
         id: 1,
         title: 'Udaipur Sightseeing ',
-        text1: 'Tour',
+        text1: ' Udaipur Tour',
         image: require('../images/udaipur.jpg'),
         btnTxt: 'view Package',
         btnlink: 'UdaipurDay',
@@ -563,11 +563,28 @@ const CarSliderImg = [
         btnTxt: 'view Package',
         btnlink: 'MountAbu',
       },
+      {
+        id: 6,
+        title: 'Udaipur Sightseeing ',
+        text1: ' Udaipur Tour',
+        image: require('../images/udaipur.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'UdaipurDay',
+      },{
+        id: 2,
+        title: 'Eklingji Nathdwara ',
+        text1: ' HaldighatiTour',
+        image: require('../images/Eklingji-Nathdwara.jpg'),
+        btnTxt: 'view Package',
+        btnlink: 'Ekling',
+      },
     ],
+    
   },
 ];
 
 const MultiSlider = () => {
+
   const navigation = useNavigation();
   const handlePress = btnlink => {
     if (btnlink) {
@@ -589,7 +606,7 @@ const MultiSlider = () => {
             marginVertical: responsiveHeight(1),
           }}
           autoplay={true}
-          autoplayInterval={3000}
+          autoplayInterval={2000}
           circleLoop={false}
           sliderBoxHeight={responsiveHeight(30)}
           imageLoadingColor="#fff"
@@ -671,7 +688,7 @@ const styles = StyleSheet.create({
   itemContainer2:{
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: responsiveHeight(4),
+    marginVertical: responsiveHeight(1),
     borderWidth: 0.5,
     borderColor: '#252525',
     borderRadius: responsiveHeight(2),
@@ -680,7 +697,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     position: 'relative',
     marginBottom: responsiveHeight(5),
-    margin:responsiveHeight(1.5)
+    margin:responsiveHeight(1)
   },
 
   itemContent: {

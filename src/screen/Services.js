@@ -200,7 +200,7 @@ const Services = () => {
                   // width:100
                   fontSize: 15,
                 }}>
-                Yes, I Want To Book This Tour!
+                Yes, I Want To Book This Service!
               </Text>
             </TouchableOpacity>
           </View>

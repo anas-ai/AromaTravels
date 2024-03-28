@@ -9,7 +9,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import React from 'react';
-import FontIcon from 'react-native-vector-icons/AntDesign';
+import FontIcon from 'react-native-vector-icons/Foundation';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import { useNavigation } from '@react-navigation/native';
@@ -63,12 +63,12 @@ const Ranakpur = () => {
             marginVertical: -15,
             flexDirection: 'row',
           }}>
-          <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
+         <View style={{paddingHorizontal: 12}}>
+            <Text style={{fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>_</Text>
           </View>
-          <FontIcon name="customerservice" color={'#213e9a'} size={25} />
+          <FontIcon name="map" color={'#213e9a'} size={25} />
           <View>
-            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
+            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>
               _
             </Text>
           </View>
@@ -98,7 +98,7 @@ const Ranakpur = () => {
                     height: responsiveScreenHeight(25),
                     width: responsiveScreenHeight(45),
                     resizeMode: 'contain',
-                    marginTop: 40,
+                    marginTop: 15,
                   }}>
                    <Text
                     style={{
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#213e9a',
-    fontSize: 30,
+    fontSize: responsiveFontSize(2.5),
     fontWeight: '500',
     textAlign: 'center',
   },

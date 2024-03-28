@@ -16,10 +16,10 @@ const ExcursionAccordion = () => {
           <ListItem.Content>
             <ListItem.Title
               style={{
-                fontSize: RFPercentage(1.7),
-                color: 'gray',
-                fontWeight:'700',
-                marginLeft:responsiveScreenWidth(.5)
+                fontSize: responsiveFontSize(1.7),
+                color: '#787878',
+                fontWeight: '700',
+                marginLeft: responsiveScreenWidth(0.5)
               }}>
               Udaipur Excursion
             </ListItem.Title>
@@ -32,7 +32,7 @@ const ExcursionAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('UdaipurDay')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Udaipur Day Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>Udaipur Day Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -40,14 +40,14 @@ const ExcursionAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Kumbhalgarh')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Kumbhalgarh-Haldighati Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>Kumbhalgarh-Haldighati Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Ranakpur')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Ranakpur Kumbhalgarh day tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>Ranakpur Kumbhalgarh day tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -55,7 +55,7 @@ const ExcursionAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Ekling')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>
                 Eklingji Nathdwara Haldighati Tour{' '}
               </ListItem.Title>
             </ListItem.Content>
@@ -65,7 +65,7 @@ const ExcursionAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Chittorgarh')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Chittorgarh Fort day tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>Chittorgarh Fort day tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>
@@ -73,7 +73,7 @@ const ExcursionAccordion = () => {
         <TouchableOpacity onPress={() => navigation.navigate('MountAbu')}>
           <ListItem>
             <ListItem.Content>
-              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%'}}>Mount Abu Tour</ListItem.Title>
+              <ListItem.Title style={{fontSize:responsiveFontSize(1.5),marginLeft:'5%',marginVertical:responsiveScreenWidth(-4)}}>Mount Abu Tour</ListItem.Title>
             </ListItem.Content>
           </ListItem>
         </TouchableOpacity>

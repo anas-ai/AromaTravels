@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
+  Linking,
 } from 'react-native';
 import {RFPercentage} from 'react-native-responsive-fontsize';
 import {
@@ -18,6 +19,7 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import {
   responsiveFontSize,
   responsiveHeight,
+  responsiveScreenFontSize,
   responsiveScreenHeight,
   responsiveScreenWidth,
   responsiveWidth,
@@ -66,6 +68,11 @@ const Home = () => {
     },
   ];
 
+ const link = (URL)=>{
+  Linking.openURL(URL)
+ }
+
+
   const navigation = useNavigation();
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -90,7 +97,7 @@ const Home = () => {
         </Swiper>
 
         <View style={styles.textContainer}>
-          <Text style={styles.text}>Udaipur Sightseeing!</Text>
+          <Text style={styles.text}>Aroma Travels</Text>
         </View>
 
         <View style={styles.lineContainer}>
@@ -157,6 +164,54 @@ const Home = () => {
         <Welcome />
         <Contact />
         {/* <Footer /> */}
+        <View
+          style={{
+            height: responsiveHeight(23),
+            width: '100%',
+            backgroundColor: '#00adef',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Image
+            source={require('../images/aboutImg/tripadvisor-banner.png')}
+            style={{height:responsiveHeight(10),width:responsiveHeight(10)}}
+          />
+          <Text
+            style={{
+              color: 'white',
+              fontSize: responsiveScreenFontSize(2),
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            RECOMMENDED ON THE WORLD'S LARGEST
+          </Text>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: responsiveScreenFontSize(2),
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            TRAVEL SITE
+          </Text>
+          <TouchableOpacity onPress={()=>link('https://www.tripadvisor.in/UserReviewEdit-g297672-d19947403-Travel_Aroma-Udaipur_Udaipur_District_Rajasthan.html')}>
+            <Text
+              style={{
+                color: '#fff',
+                backgroundColor: '#3B3486',
+                borderWidth: 1,
+                borderColor: 'white',
+                padding: 12,
+                marginTop: 10,
+                paddingHorizontal: 20,
+                marginBottom:10,
+                width: '100%',
+                fontWeight: 'bold',
+              }}>
+              WRITE A PREVIEW
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );

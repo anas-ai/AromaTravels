@@ -10,7 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import FontIcon from 'react-native-vector-icons/AntDesign';
+import FontIcon from 'react-native-vector-icons/Foundation';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import { useNavigation } from '@react-navigation/native';
@@ -61,7 +61,7 @@ const UdaipurDay = () => {
   const navigation = useNavigation()
   return (
     <ScrollView>
-      <View style={{flex: 0, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <ImageBackground
           source={require('../images/ExcursionImg/tour-banner.jpg')}
           style={{width: '100%', height: 120, resizeMode: 'contain'}}>
@@ -88,11 +88,11 @@ const UdaipurDay = () => {
             flexDirection: 'row',
           }}>
           <View style={{paddingHorizontal: 12}}>
-            <Text style={{fontWeight: 'bold', marginBottom: 5}}>_</Text>
+            <Text style={{fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>_</Text>
           </View>
-          <FontIcon name="customerservice" color={'#213e9a'} size={25} />
+          <FontIcon name="map" color={'#213e9a'} size={25} />
           <View>
-            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5}}>
+            <Text style={{paddingLeft: 8, fontWeight: 'bold', marginBottom: 5,color:'#213e9a'}}>
               _
             </Text>
           </View>
@@ -122,7 +122,7 @@ const UdaipurDay = () => {
                     height: responsiveScreenHeight(25),
                     width: responsiveScreenHeight(45),
                     resizeMode: 'contain',
-                    marginTop: 40,
+                    marginTop: 10,
                   }}>
                   <Text
                     style={{
@@ -146,7 +146,7 @@ const UdaipurDay = () => {
                 </ImageBackground>
                 <View>
                   <Text
-                    style={{textAlign: 'justify', margin: 10, color: 'gray',letterSpacing:.2}}>
+                    style={{textAlign: 'justify', margin: 10, color: 'gray',letterSpacing:.1}}>
                     {data.text}
                   </Text>
                 </View>
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#213e9a',
-    fontSize: 30,
+    fontSize: responsiveFontSize(2.5),
     fontWeight: '500',
     textAlign: 'center',
   },
